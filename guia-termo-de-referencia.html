@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guia Prático · Termo de Referência — Lei 14.133/2021 & Decreto 1.525/2022 MT</title>
+<meta name="description" content="Guia prático para elaboração de Termo de Referência à luz da Lei 14.133/2021, Decreto Estadual 1.525/2022-MT e jurisprudência do TCU. Modelos, checklists, exercícios interativos.">
+<meta name="author" content="Iohan Camões — POLITEC/MT">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230f172a'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' font-weight='900' fill='%2338bdf8' text-anchor='middle'%3ETR%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#0a0f1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f1a;--bg2:#111827;--bg3:#1a2236;--bg4:#161d2e;
+  --sky:#38bdf8;--sky2:#7dd3fc;--teal:#2dd4bf;--teal2:#5eead4;
+  --rose:#f43f5e;--violet:#a78bfa;--amber:#fbbf24;--emerald:#34d399;
+  --blue:#3b82f6;--indigo:#818cf8;--cyan:#22d3ee;
+  --t1:#f1f5f9;--t2:#94a3b8;--t3:#64748b;
+  --brd:#1e293b;--brd2:#334155;
+  --r:16px;--rs:10px;
+  --ff:'Outfit',system-ui,sans-serif;
+  --fd:'Cormorant Garamond',Georgia,serif;
+  --fm:'JetBrains Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff);background:var(--bg);color:var(--t1);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.03'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
+::selection{background:rgba(56,189,248,.3);color:#fff}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--sky);border-radius:3px}
+a{color:var(--sky);text-decoration:none;transition:color .2s}
+a:hover{color:var(--sky2)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;padding:2rem;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(56,189,248,.06) 0%,transparent 70%),radial-gradient(ellipse 60% 50% at 20% 80%,rgba(45,212,191,.04) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 80% 20%,rgba(167,139,250,.03) 0%,transparent 60%)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(56,189,248,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.03) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 70% 60% at 50% 50%,black 30%,transparent 70%)}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 20px;background:rgba(56,189,248,.08);border:1px solid rgba(56,189,248,.15);border-radius:100px;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--sky);margin-bottom:2rem;backdrop-filter:blur(10px);animation:fsu .8s ease-out both}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--sky);border-radius:50%;animation:pd 2s ease-in-out infinite}
+@keyframes pd{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.5)}}
+.hero h1{font-family:var(--fd);font-size:clamp(2.6rem,6vw,5rem);font-weight:700;line-height:1.05;letter-spacing:-.01em;margin-bottom:1.5rem;animation:fsu .8s .15s ease-out both}
+.hero h1 span{background:linear-gradient(135deg,var(--sky) 0%,var(--teal) 50%,var(--sky) 100%);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;animation:shm 4s linear infinite}
+@keyframes shm{0%{background-position:0% center}100%{background-position:200% center}}
+.hero-sub{font-size:clamp(.95rem,2vw,1.15rem);color:var(--t2);max-width:680px;margin-bottom:2.5rem;font-weight:300;animation:fsu .8s .3s ease-out both}
+.hero-meta{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:center;margin-bottom:3rem;animation:fsu .8s .45s ease-out both}
+.hero-mi{display:flex;align-items:center;gap:8px;font-size:.83rem;color:var(--t3)}
+.hero-mi svg{width:16px;height:16px;color:var(--sky)}
+.hero-cta{display:inline-flex;align-items:center;gap:10px;padding:16px 36px;background:linear-gradient(135deg,var(--sky),#0ea5e9);color:var(--bg);font-family:var(--ff);font-weight:700;font-size:1rem;border:none;border-radius:100px;cursor:pointer;transition:all .35s cubic-bezier(.4,0,.2,1);box-shadow:0 4px 30px rgba(56,189,248,.3);animation:fsu .8s .6s ease-out both}
+.hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 40px rgba(56,189,248,.5)}
+.hero-cta svg{width:18px;height:18px}
+@keyframes fsu{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.hero-part{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.2);border-radius:100px;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber);margin-top:1.5rem;animation:fsu .8s .75s ease-out both}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:12px 24px;background:rgba(10,15,26,.9);backdrop-filter:blur(20px);border-bottom:1px solid var(--brd);display:none;align-items:center;justify-content:space-between}
+.nav.vis{display:flex}
+.nav-brand{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--sky)}
+.nav-pw{flex:1;max-width:300px;margin:0 24px;height:3px;background:var(--brd);border-radius:2px;overflow:hidden}
+.nav-pb{height:100%;background:linear-gradient(90deg,var(--sky),var(--teal));border-radius:2px;width:0%;transition:width .5s ease}
+.nav-ml{font-size:.78rem;color:var(--t3)}
+
+/* ── SIDEBAR DOTS ── */
+.sdots{position:fixed;right:20px;top:50%;transform:translateY(-50%);z-index:100;display:none;flex-direction:column;gap:6px}
+@media(min-width:1200px){.sdots.vis{display:flex}}
+.sdot{width:10px;height:10px;border-radius:50%;background:var(--brd2);border:none;cursor:pointer;transition:all .3s ease;position:relative}
+.sdot:hover,.sdot.act{background:var(--sky);transform:scale(1.3)}
+.sdot::after{content:attr(data-l);position:absolute;right:20px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.7rem;font-weight:600;color:var(--t3);opacity:0;transition:opacity .2s;pointer-events:none}
+.sdot:hover::after{opacity:1}
+
+/* ── MAIN ── */
+.main{display:none;max-width:1100px;margin:0 auto;padding:0 24px 100px}
+.main.act{display:block}
+
+/* ── MODULE ── */
+.mod{margin-bottom:80px;opacity:0;transform:translateY(40px);transition:opacity .7s ease,transform .7s ease}
+.mod.vis{opacity:1;transform:translateY(0)}
+.mod-hdr{display:flex;align-items:flex-start;gap:20px;margin-bottom:36px;padding-top:80px}
+.mod-num{display:flex;align-items:center;justify-content:center;width:54px;height:54px;background:linear-gradient(135deg,var(--sky),#0ea5e9);color:var(--bg);font-family:var(--fd);font-size:1.3rem;font-weight:700;border-radius:14px;flex-shrink:0}
+.mod-tg h2{font-family:var(--fd);font-size:clamp(1.5rem,3.5vw,2.3rem);font-weight:700;line-height:1.15;margin-bottom:6px}
+.mod-tag{font-size:.73rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sky);opacity:.8}
+
+/* ── CARDS ── */
+.card{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);padding:30px;margin-bottom:22px;transition:all .35s ease}
+.card:hover{border-color:rgba(56,189,248,.15);box-shadow:0 0 40px rgba(56,189,248,.04)}
+.card h3{font-family:var(--fd);font-size:1.25rem;font-weight:700;margin-bottom:14px}
+.card p,.card li{color:var(--t2);font-size:.93rem;line-height:1.8}
+.card p{margin-bottom:12px}
+.card ul,.card ol{padding-left:20px;margin-bottom:12px}
+.card li{margin-bottom:6px;padding-left:4px}
+.card li::marker{color:var(--sky)}
+
+/* ── HIGHLIGHT BOX ── */
+.hbox{border-left:3px solid var(--sky);border-radius:0 var(--rs) var(--rs) 0;padding:22px 26px;margin:18px 0;background:linear-gradient(135deg,rgba(56,189,248,.06),rgba(56,189,248,.02))}
+.hbox.tl{border-color:var(--teal);background:linear-gradient(135deg,rgba(45,212,191,.06),rgba(45,212,191,.02))}
+.hbox.em{border-color:var(--emerald);background:linear-gradient(135deg,rgba(52,211,153,.06),rgba(52,211,153,.02))}
+.hbox.ro{border-color:var(--rose);background:linear-gradient(135deg,rgba(244,63,94,.06),rgba(244,63,94,.02))}
+.hbox.vi{border-color:var(--violet);background:linear-gradient(135deg,rgba(167,139,250,.06),rgba(167,139,250,.02))}
+.hbox.am{border-color:var(--amber);background:linear-gradient(135deg,rgba(251,191,36,.06),rgba(251,191,36,.02))}
+.hbox strong{color:var(--t1)}.hbox p{margin-bottom:6px}.hbox p:last-child{margin-bottom:0}
+
+/* ── LAW BOX ── */
+.lbox{background:var(--bg4);border:1px solid var(--brd);border-radius:var(--r);padding:26px;margin:18px 0;position:relative;overflow:hidden}
+.lbox::before{content:'§';position:absolute;top:-10px;right:20px;font-family:var(--fd);font-size:5rem;font-weight:700;color:rgba(56,189,248,.04);pointer-events:none}
+.lbox-lb{display:inline-flex;padding:4px 12px;background:rgba(56,189,248,.1);border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--sky);margin-bottom:12px}
+.lbox p{font-family:var(--fm);font-size:.83rem;line-height:1.9;color:var(--t2)}
+.lbox p strong{color:var(--sky2);font-weight:600}
+
+/* ── ACCORDION ── */
+.acc-item{border:1px solid var(--brd);border-radius:var(--rs);margin-bottom:8px;overflow:hidden}
+.acc-item:hover{border-color:var(--brd2)}
+.acc-btn{width:100%;display:flex;align-items:center;justify-content:space-between;padding:16px 20px;background:var(--bg2);border:none;color:var(--t1);font-family:var(--ff);font-size:.93rem;font-weight:600;cursor:pointer;text-align:left;transition:background .3s;gap:12px}
+.acc-btn:hover{background:var(--bg3)}
+.acc-btn .ic{width:20px;height:20px;transition:transform .3s;color:var(--sky);flex-shrink:0}
+.acc-item.open .acc-btn .ic{transform:rotate(180deg)}
+.acc-body{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc-inner{padding:0 20px 20px;color:var(--t2);font-size:.88rem;line-height:1.8}
+.acc-item.open .acc-body{max-height:3000px}
+
+/* ── STEPS ── */
+.steps{display:flex;flex-direction:column;margin:22px 0}
+.stp{display:flex;gap:18px}
+.stp-l{display:flex;flex-direction:column;align-items:center;flex-shrink:0}
+.stp-d{min-width:38px;height:38px;padding:0 10px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.72rem;color:var(--bg);flex-shrink:0;z-index:1;white-space:nowrap}
+.stp-d.wide{border-radius:20px;padding:0 12px}
+.stp-d.sk{background:var(--sky)}.stp-d.tl{background:var(--teal)}.stp-d.em{background:var(--emerald)}.stp-d.vi{background:var(--violet)}.stp-d.ro{background:var(--rose)}.stp-d.am{background:var(--amber)}.stp-d.bl{background:var(--blue)}.stp-d.in{background:var(--indigo)}.stp-d.cy{background:var(--cyan)}
+.stp-c{width:2px;flex:1;min-height:16px;background:var(--brd2)}
+.stp-r{padding-bottom:24px;flex:1}
+.stp-r h4{font-size:.97rem;font-weight:700;margin-bottom:4px}
+.stp-r p{font-size:.86rem;color:var(--t2);line-height:1.7}
+
+/* ── TABLE ── */
+.tw{overflow-x:auto;margin:18px 0;border-radius:var(--r);border:1px solid var(--brd)}
+.tw table{width:100%;border-collapse:collapse;font-size:.86rem}
+.tw th{background:var(--bg4);padding:13px 16px;text-align:left;font-weight:700;color:var(--sky);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--brd);white-space:nowrap}
+.tw td{padding:13px 16px;border-bottom:1px solid var(--brd);color:var(--t2);vertical-align:top}
+.tw tr:last-child td{border-bottom:none}
+.tw tr:hover td{background:rgba(56,189,248,.02)}
+.badge{display:inline-flex;padding:3px 10px;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.04em}
+.badge.sk{background:rgba(56,189,248,.15);color:var(--sky)}
+.badge.tl{background:rgba(45,212,191,.15);color:var(--teal)}
+.badge.ro{background:rgba(244,63,94,.15);color:var(--rose)}
+.badge.em{background:rgba(52,211,153,.15);color:var(--emerald)}
+.badge.am{background:rgba(251,191,36,.15);color:var(--amber)}
+.badge.vi{background:rgba(167,139,250,.15);color:var(--violet)}
+
+/* ── INFO GRID ── */
+.igrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:22px 0}
+.iitem{background:var(--bg4);border:1px solid var(--brd);border-radius:var(--rs);padding:22px;transition:all .35s ease}
+.iitem:hover{border-color:rgba(56,189,248,.15);transform:translateY(-2px)}
+.iitem .iic{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;font-size:1.1rem}
+.iic.sk{background:rgba(56,189,248,.12)}.iic.tl{background:rgba(45,212,191,.12)}.iic.em{background:rgba(52,211,153,.12)}.iic.vi{background:rgba(167,139,250,.12)}.iic.ro{background:rgba(244,63,94,.12)}.iic.am{background:rgba(251,191,36,.12)}.iic.bl{background:rgba(59,130,246,.12)}
+.iitem h4{font-size:.92rem;font-weight:700;margin-bottom:6px}
+.iitem p{font-size:.8rem;color:var(--t3);line-height:1.6}
+
+/* ── NUMBERED CARDS GRID ── */
+.ncards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;margin:22px 0}
+.ncard{background:var(--bg4);border:1px solid var(--brd);border-radius:var(--rs);padding:20px;display:flex;gap:14px;align-items:flex-start;transition:all .35s ease}
+.ncard:hover{border-color:rgba(56,189,248,.15);transform:translateY(-1px)}
+.ncard-num{min-width:36px;height:36px;padding:0 8px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.72rem;flex-shrink:0;white-space:nowrap;color:var(--bg)}
+.ncard-num.sk{background:var(--sky)}.ncard-num.tl{background:var(--teal)}.ncard-num.em{background:var(--emerald)}.ncard-num.vi{background:var(--violet)}.ncard-num.ro{background:var(--rose)}.ncard-num.am{background:var(--amber)}.ncard-num.bl{background:var(--blue)}.ncard-num.in{background:var(--indigo)}.ncard-num.cy{background:var(--cyan)}
+.ncard h4{font-size:.9rem;font-weight:700;margin-bottom:4px}
+.ncard p{font-size:.8rem;color:var(--t3);line-height:1.6}
+
+/* ── CASE STUDY ── */
+.cbox{background:var(--bg2);border:1px solid var(--brd);border-radius:var(--r);overflow:hidden;margin:22px 0}
+.cbox-h{padding:18px 26px;background:var(--bg4);border-bottom:1px solid var(--brd);display:flex;align-items:center;gap:12px}
+.cbox-h h4{font-size:.93rem;font-weight:700}
+.cbox-tag{margin-left:auto;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--amber)}
+.cbox-b{padding:22px 26px;font-size:.88rem;color:var(--t2);line-height:1.8}
+.cbox-b p{margin-bottom:10px}
+
+/* ── DECISION TREE ── */
+.dtree{margin:22px 0}
+.dnode{background:var(--bg4);border:1px solid var(--brd);border-radius:var(--rs);padding:20px;margin-bottom:12px;cursor:pointer;transition:all .3s ease}
+.dnode:hover{border-color:var(--sky);box-shadow:0 0 20px rgba(56,189,248,.06)}
+.dnode.active{border-color:var(--sky);background:rgba(56,189,248,.05)}
+.dnode h4{font-size:.95rem;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.dnode h4 .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.dnode p{font-size:.82rem;color:var(--t3);line-height:1.6}
+.dsub{padding-left:24px;border-left:2px solid var(--brd2);margin-left:16px;display:none}
+.dsub.show{display:block}
+
+/* ── QUIZ ── */
+.qcard{background:linear-gradient(135deg,var(--bg2),var(--bg4));border:1px solid var(--brd);border-radius:var(--r);padding:30px;margin:22px 0}
+.qcard h4{font-family:var(--fd);font-size:1.1rem;margin-bottom:6px}
+.qlb{font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--violet);margin-bottom:10px}
+.qcard p.qq{font-size:.93rem;margin-bottom:16px;color:var(--t2)}
+.qopts{display:flex;flex-direction:column;gap:8px}
+.qopt{display:flex;align-items:center;gap:12px;padding:13px 16px;background:var(--bg);border:1px solid var(--brd);border-radius:var(--rs);cursor:pointer;transition:all .3s;font-size:.88rem;color:var(--t2)}
+.qopt:hover{border-color:var(--brd2);background:var(--bg2)}
+.qopt.ok{border-color:var(--emerald)!important;background:rgba(52,211,153,.08)!important;color:var(--emerald)!important}
+.qopt.no{border-color:var(--rose)!important;background:rgba(244,63,94,.08)!important;color:var(--rose)!important}
+.qopt .ol{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.76rem;background:var(--bg4);color:var(--t3);flex-shrink:0;border:1px solid var(--brd)}
+.qfb{margin-top:14px;padding:14px 18px;border-radius:var(--rs);font-size:.86rem;line-height:1.7;display:none}
+.qfb.sh{display:block}
+.qfb.ok{background:rgba(52,211,153,.08);border:1px solid rgba(52,211,153,.2);color:var(--emerald)}
+.qfb.no{background:rgba(244,63,94,.08);border:1px solid rgba(244,63,94,.2);color:var(--rose)}
+
+/* ── FOOTER ── */
+.footer{text-align:center;padding:60px 24px;border-top:1px solid var(--brd);margin-top:80px}
+.footer p{font-size:.8rem;color:var(--t3);line-height:1.8}
+.footer .fb{font-family:var(--fd);font-weight:700;color:var(--sky);font-size:1rem;margin-bottom:8px}
+
+/* ── NAV BUTTONS ── */
+.nav-btns{display:flex;justify-content:center;gap:14px;margin:40px 0;flex-wrap:wrap}
+.nbtn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:100px;font-family:var(--ff);font-weight:600;font-size:.88rem;cursor:pointer;transition:all .35s ease;border:none;text-decoration:none}
+.nbtn-back{background:transparent;border:1px solid var(--brd2);color:var(--t2)}
+.nbtn-back:hover{border-color:var(--sky);color:var(--sky)}
+.nbtn-fwd{background:linear-gradient(135deg,var(--sky),#0ea5e9);color:var(--bg);box-shadow:0 4px 20px rgba(56,189,248,.25)}
+.nbtn-fwd:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(56,189,248,.4)}
+.nbtn svg{width:16px;height:16px}
+
+/* ── CHECKLIST INTERACTIVE ── */
+.chk-list{margin:18px 0}
+.chk-item{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--bg4);border:1px solid var(--brd);border-radius:var(--rs);margin-bottom:6px;cursor:pointer;transition:all .3s;user-select:none}
+.chk-item:hover{border-color:var(--brd2)}
+.chk-item.done{border-color:rgba(52,211,153,.3);background:rgba(52,211,153,.04)}
+.chk-box{width:22px;height:22px;border:2px solid var(--brd2);border-radius:6px;flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .3s;margin-top:2px}
+.chk-item.done .chk-box{background:var(--emerald);border-color:var(--emerald)}
+.chk-item.done .chk-box::after{content:'✓';color:var(--bg);font-size:.7rem;font-weight:800}
+.chk-txt{font-size:.86rem;color:var(--t2);line-height:1.6}
+.chk-item.done .chk-txt{color:var(--t3);text-decoration:line-through}
+.chk-ref{display:block;font-size:.72rem;color:var(--t3);margin-top:2px;font-family:var(--fm)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .mod-hdr{flex-direction:column;gap:12px}
+  .ncards{grid-template-columns:1fr}
+  .igrid{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+}
+
+
+/* ══ ENHANCED EFFECTS ══ */
+
+/* Floating particles canvas */
+.particles{position:fixed;inset:0;pointer-events:none;z-index:0}
+
+/* Animated gradient orbs */
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.12;animation:orbFloat 20s ease-in-out infinite}
+.hero-orb.o1{width:400px;height:400px;background:var(--sky);top:10%;left:10%;animation-delay:0s}
+.hero-orb.o2{width:300px;height:300px;background:var(--teal);bottom:20%;right:15%;animation-delay:-7s}
+.hero-orb.o3{width:250px;height:250px;background:var(--violet);top:60%;left:50%;animation-delay:-14s}
+@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,-40px) scale(1.1)}50%{transform:translate(-20px,30px) scale(.9)}75%{transform:translate(40px,20px) scale(1.05)}}
+
+/* Glassmorphism cards */
+.card{background:rgba(17,24,39,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(56,189,248,.08);position:relative;overflow:hidden}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(56,189,248,.2),transparent);opacity:0;transition:opacity .5s}.card:hover::before{opacity:1}
+
+/* Animated card glow on hover */
+.card::after{content:'';position:absolute;inset:-1px;border-radius:var(--r);background:conic-gradient(from var(--angle,0deg),transparent 60%,rgba(56,189,248,.1) 80%,transparent 100%);z-index:-1;opacity:0;transition:opacity .5s}
+.card:hover::after{opacity:1}
+
+/* Glow effect for module numbers */
+.mod-num{position:relative;box-shadow:0 0 20px rgba(56,189,248,.2);animation:numPulse 3s ease-in-out infinite}
+@keyframes numPulse{0%,100%{box-shadow:0 0 20px rgba(56,189,248,.2)}50%{box-shadow:0 0 35px rgba(56,189,248,.35)}}
+
+/* Animated border for law boxes */
+.lbox{position:relative;overflow:hidden;border:1px solid transparent;background-clip:padding-box}
+.lbox::after{content:'';position:absolute;inset:-2px;border-radius:var(--r);background:linear-gradient(135deg,rgba(56,189,248,.15),transparent 40%,transparent 60%,rgba(45,212,191,.15));z-index:-1}
+
+/* Shine sweep on highlight boxes */
+.hbox{position:relative;overflow:hidden}
+.hbox::after{content:'';position:absolute;top:0;left:-100%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.03),transparent);transition:left .6s ease}.hbox:hover::after{left:150%}
+
+/* Quiz option hover glow */
+.qopt{position:relative;overflow:hidden}
+.qopt::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(56,189,248,.06) 0%,transparent 60%);opacity:0;transition:opacity .3s}.qopt:hover::before{opacity:1}
+
+/* Smooth accordion with height animation */
+.acc-body{transition:max-height .5s cubic-bezier(.4,0,.2,1)}
+.acc-item.open .acc-body{transition:max-height .6s cubic-bezier(.4,0,.2,1)}
+
+/* Animated step connectors */
+.stp-c{background:linear-gradient(180deg,var(--sky),var(--brd2));background-size:100% 200%;animation:stepFlow 3s ease-in-out infinite}
+@keyframes stepFlow{0%,100%{background-position:0 0}50%{background-position:0 100%}}
+
+/* Table row slide-in */
+.tw tr{animation:rowIn .4s ease-out both}
+.tw tr:nth-child(1){animation-delay:.05s}.tw tr:nth-child(2){animation-delay:.1s}.tw tr:nth-child(3){animation-delay:.15s}.tw tr:nth-child(4){animation-delay:.2s}.tw tr:nth-child(5){animation-delay:.25s}
+@keyframes rowIn{from{opacity:0;transform:translateX(-10px)}to{opacity:1;transform:translateX(0)}}
+
+/* Badge shimmer */
+.badge{position:relative;overflow:hidden}
+.badge::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.15),transparent);animation:badgeShimmer 4s ease-in-out infinite}
+@keyframes badgeShimmer{0%,80%,100%{left:-100%}40%{left:200%}}
+
+/* Info item hover lift with glow */
+.iitem{transition:all .4s cubic-bezier(.4,0,.2,1)}
+.iitem:hover{border-color:rgba(56,189,248,.2);transform:translateY(-4px);box-shadow:0 12px 40px rgba(56,189,248,.08)}
+
+/* Numbered card hover */
+.ncard{transition:all .4s cubic-bezier(.4,0,.2,1)}
+.ncard:hover{border-color:rgba(56,189,248,.2);transform:translateY(-3px) scale(1.01);box-shadow:0 8px 30px rgba(56,189,248,.06)}
+
+/* CTA button ripple */
+.hero-cta{position:relative;overflow:hidden}
+.hero-cta::after{content:'';position:absolute;inset:0;background:linear-gradient(45deg,transparent 30%,rgba(255,255,255,.15) 50%,transparent 70%);transform:translateX(-100%);transition:transform .6s}.hero-cta:hover::after{transform:translateX(100%)}
+
+/* Nav progress bar glow */
+.nav-pb{box-shadow:0 0 8px rgba(56,189,248,.4)}
+
+/* Sidebar dots orbit effect */
+.sdot{transition:all .3s cubic-bezier(.4,0,.2,1)}
+.sdot:hover{box-shadow:0 0 12px rgba(56,189,248,.5)}
+.sdot.act{box-shadow:0 0 10px rgba(56,189,248,.4)}
+
+}
+
+/* Decision tree pulse */
+.dnode{transition:all .4s cubic-bezier(.4,0,.2,1)}
+.dnode .dot{transition:all .3s;box-shadow:0 0 0 0 rgba(56,189,248,0)}
+.dnode:hover .dot{box-shadow:0 0 0 6px rgba(56,189,248,.15)}
+
+/* Checklist completion animation */
+.chk-item{transition:all .3s cubic-bezier(.4,0,.2,1)}
+.chk-item.done{transform:scale(.99)}
+.chk-box{transition:all .3s cubic-bezier(.34,1.56,.64,1)}
+.chk-item.done .chk-box{transform:scale(1.1)}
+
+/* Focus ring for accessibility */
+button:focus-visible,.qopt:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){*{animation-duration:0.01ms!important;transition-duration:0.01ms!important}}
+
+/* Custom cursor glow (desktop only) */
+@media(hover:hover){.cursor-glow{position:fixed;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(56,189,248,.06) 0%,transparent 70%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);transition:opacity .3s}.cursor-glow.hidden{opacity:0}}
+
+</style>
+</head>
+<body>
+<canvas class="particles" id="particlesCanvas"></canvas>
+<div class="cursor-glow hidden" id="cursorGlow"></div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="hero-orb o1"></div><div class="hero-orb o2"></div><div class="hero-orb o3"></div>
+<div class="hero-grid"></div>
+<div class="hero-badge">Guia Prático — SESP/MT</div>
+<h1>Elaboração do<br><span>Termo de Referência</span></h1>
+<p class="hero-sub">Guia completo para construção do TR à luz da Lei nº 14.133/2021 e do Decreto Estadual nº 1.525/2022, com modelos da SESP-MT, checklists por modalidade e jurisprudência do TCU.</p>
+<div class="hero-meta">
+  <span class="hero-mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg> 12 Módulos</span>
+  <span class="hero-mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg> 13 Modelos TR</span>
+  <span class="hero-mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg> 11 Checklists</span>
+  <span class="hero-mi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg> Exercícios Interativos</span>
+</div>
+<button class="hero-cta" onclick="startCourse()">
+  Iniciar o Guia
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+</button>
+<div class="hero-part">12 Módulos · Guia Completo</div>
+</section>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav" id="topNav">
+<span class="nav-brand">TR · Guia Prático</span>
+<div class="nav-pw"><div class="nav-pb" id="navPb"></div></div>
+<span class="nav-ml" id="navMl">Módulo 1 de 12</span>
+</nav>
+
+<!-- ═══ SIDEBAR DOTS ═══ -->
+<div class="sdots" id="sDots">
+<button class="sdot" data-l="Introdução" onclick="goMod(1)"></button>
+<button class="sdot" data-l="Natureza Jurídica" onclick="goMod(2)"></button>
+<button class="sdot" data-l="9 Elementos" onclick="goMod(3)"></button>
+<button class="sdot" data-l="Árvore Decisória" onclick="goMod(4)"></button>
+<button class="sdot" data-l="Exercícios P1" onclick="goMod(5)"></button>
+<button class="sdot" data-l="Requisitos" onclick="goMod(6)"></button>
+<button class="sdot" data-l="Execução" onclick="goMod(7)"></button>
+<button class="sdot" data-l="Fiscalização" onclick="goMod(8)"></button>
+<button class="sdot" data-l="Pagamento" onclick="goMod(9)"></button>
+<button class="sdot" data-l="Seleção" onclick="goMod(10)"></button>
+<button class="sdot" data-l="Garantias/Sanções" onclick="goMod(11)"></button>
+<button class="sdot" data-l="Peculiaridades" onclick="goMod(12)"></button>
+</div>
+
+<!-- ═══ MAIN ═══ -->
+<main class="main" id="mainContent">
+
+<!-- ═══ MÓDULO 1 ═══ -->
+<section class="mod" id="m1">
+<div class="mod-hdr"><div class="mod-num">1</div><div class="mod-tg"><div class="mod-tag">Módulo 1 · Visão Geral</div><h2>O Termo de Referência como Pedra Angular da Contratação Pública</h2></div></div>
+
+<div class="card">
+<h3>O que é o Termo de Referência?</h3>
+<p>O Termo de Referência (TR) é o <strong>documento central</strong> de qualquer contratação pública de bens e serviços. Ele nasce do planejamento (DFD → ETP → TR) e materializa tudo o que a Administração precisa definir <em>antes</em> de ir ao mercado: o que comprar, por que comprar, quanto pagar, como receber e como fiscalizar.</p>
+<p>Na Lei nº 14.133/2021, o TR é definido no <strong>art. 6º, inciso XXIII</strong> como um documento necessário para a contratação de bens e serviços, com 9 elementos descritivos obrigatórios (alíneas "a" a "i"). No Decreto Estadual nº 1.525/2022, as regras se desdobram nos arts. 22 a 42 (planejamento), 66 (instrução processual) e nos modelos oficiais da SESP-MT.</p>
+<div class="hbox">
+<p><strong>🧠 Reformule mentalmente:</strong> O TR não é "burocracia que atrasa a compra". É a <em>blindagem</em> do servidor: um TR bem feito protege contra responsabilização pessoal, glosas do TCU e aditivos desnecessários. O TR é sua defesa — não seu inimigo.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Consequências de um TR Deficiente — Jurisprudência do TCU</h3>
+<p>O Tribunal de Contas da União tem sido cada vez mais rigoroso com Termos de Referência mal elaborados. A tendência é tratar falhas graves no TR como <strong>erro grosseiro</strong> para fins de responsabilização pessoal (art. 28 da LINDB).</p>
+<div class="tw"><table>
+<thead><tr><th>Acórdão</th><th>Falha identificada</th><th>Consequência</th></tr></thead>
+<tbody>
+<tr><td><strong>3569/2023</strong><br>2ª Câmara</td><td>Pesquisa de preço exclusivamente com fornecedores + dimensionamento inadequado do TR</td><td><span class="badge ro">Erro grosseiro</span> — Responsabilização pessoal</td></tr>
+<tr><td><strong>2121/2024</strong><br>Plenário</td><td>Edital aprovado sem planilhas de custos e sem justificativas — pareceristas emitiram parecer sem ressalvas</td><td><span class="badge ro">Multa R$ 10.000</span> para pareceristas</td></tr>
+<tr><td><strong>2273/2024</strong><br>Plenário</td><td>Conflito entre ETP e TR — especificações no TR divergiam do planejamento no ETP</td><td><span class="badge am">Ciência</span> — Risco de nulidade</td></tr>
+<tr><td><strong>1998/2024</strong><br>Plenário</td><td>Ausência de parâmetros objetivos no TR para qualificação técnico-operacional</td><td><span class="badge am">Ciência</span> — Afronta à transparência</td></tr>
+</tbody></table></div>
+<div class="hbox ro">
+<p><strong>⚠️ Alerta prático:</strong> O Acórdão 2.121/2024 marcou um precedente: não apenas quem elabora o TR pode ser responsabilizado, mas também <strong>quem emite parecer jurídico sem apontar falhas graves</strong>. A responsabilidade atinge toda a cadeia.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Fluxo Documental: Onde o TR se Encaixa</h3>
+<p>O TR é a <strong>terceira peça</strong> do planejamento obrigatório. Cada documento alimenta o próximo:</p>
+<div class="steps">
+<div class="stp"><div class="stp-l"><div class="stp-d sk">DFD</div><div class="stp-c"></div></div><div class="stp-r"><h4>Documento de Formalização da Demanda</h4><p>A unidade requisitante formaliza a necessidade. Deve estar aprovado e incluído no <strong>PCA</strong> (Plano de Contratações Anual). Fundamento: Art. 66, I, do Decreto 1.525/2022 c/c Art. 9º, I da IN 002/2025/SESP.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d tl">ETP</div><div class="stp-c"></div></div><div class="stp-r"><h4>Estudo Técnico Preliminar</h4><p>Analisa viabilidade técnica, econômica e ambiental. Define a solução e estima custos. Deve incluir <strong>Análise de Riscos</strong> quando aplicável. Fundamento: Art. 6º, XX da Lei 14.133/2021.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d em">TR</div><div class="stp-c"></div></div><div class="stp-r"><h4>Termo de Referência</h4><p>Materializa o planejamento em cláusulas executáveis. <strong>Deve ser coerente com o ETP</strong> — divergências são causa de nulidade (Acórdão 2273/2024). Art. 6º, XXIII da Lei 14.133/2021.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d vi">PP</div><div class="stp-c"></div></div><div class="stp-r"><h4>Pesquisa de Preços</h4><p>Define o valor estimado. Segue os 5 parâmetros do art. 46 do Decreto 1.525/2022. Alimenta o mapa comparativo + análise crítica + regra 70-30.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d am">CK</div></div><div class="stp-r"><h4>Checklist + Instrução Processual</h4><p>Verificação de conformidade. Art. 66 do Decreto 1.525/2022. É o controle final antes do envio para as instâncias de aprovação.</p></div></div>
+</div>
+<div class="hbox tl">
+<p><strong>💡 Regra de ouro:</strong> Se o ETP concluiu que a solução é "X", o TR <strong>não pode</strong> especificar "Y" sem justificativa expressa. A coerência ETP→TR é exigência legal, não sugestão.</p>
+</div>
+</div>
+</section>
+
+<!-- ═══ MÓDULO 2 ═══ -->
+<section class="mod" id="m2">
+<div class="mod-hdr"><div class="mod-num">2</div><div class="mod-tg"><div class="mod-tag">Módulo 2 · Art. 6º, XXIII — Lei 14.133/2021</div><h2>A Natureza Jurídica e os Fundamentos Legais do TR</h2></div></div>
+
+<div class="lbox">
+<div class="lbox-lb">📖 Art. 6º, XXIII — Lei 14.133/2021</div>
+<p>"Termo de referência: documento necessário para a contratação de <strong>bens e serviços</strong>, que deve conter os seguintes parâmetros e elementos descritivos: <strong>a)</strong> definição do objeto; <strong>b)</strong> fundamentação da contratação; <strong>c)</strong> descrição da solução como um todo; <strong>d)</strong> requisitos da contratação; <strong>e)</strong> modelo de execução do objeto; <strong>f)</strong> modelo de gestão do contrato; <strong>g)</strong> critérios de medição e pagamento; <strong>h)</strong> forma e critérios de seleção do fornecedor; <strong>i)</strong> estimativas de valor."</p>
+</div>
+
+<div class="card">
+<h3>TR vs. Projeto Básico: Quando Usar Cada Um?</h3>
+<p>A Lei 14.133/2021 distingue claramente os dois instrumentos:</p>
+<div class="tw"><table>
+<thead><tr><th>Aspecto</th><th>Termo de Referência</th><th>Projeto Básico/Executivo</th></tr></thead>
+<tbody>
+<tr><td><strong>Objeto</strong></td><td>Bens e Serviços</td><td>Obras e Serviços de Engenharia</td></tr>
+<tr><td><strong>Definição legal</strong></td><td>Art. 6º, XXIII</td><td>Art. 6º, XXV e XXVI</td></tr>
+<tr><td><strong>Nível de detalhamento</strong></td><td>Descritivo (o quê, como, quando)</td><td>Técnico-executivo (plantas, memoriais, ART)</td></tr>
+<tr><td><strong>Quem elabora</strong></td><td>Unidade demandante (área técnica)</td><td>Engenheiro/Arquiteto habilitado (CREA/CAU)</td></tr>
+<tr><td><strong>No Decreto MT 1.525/2022</strong></td><td>Art. 22 a 42 (planejamento)</td><td>Art. 22 a 42 + IN 04/2024 (Engenharia)</td></tr>
+</tbody></table></div>
+<div class="hbox am">
+<p><strong>📌 Atenção SESP-MT:</strong> Nos checklists da SESP, o item 3 é sempre "Termo de Referência/Projeto Básico ou Executivo". Para engenharia, aplica-se o checklist específico da IN 04/2024, que exige ART, cronograma físico-financeiro e composição de BDI.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Fundamentação Legal Completa no Contexto de MT</h3>
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">Lei Federal 14.133/2021 — Dispositivos-chave sobre o TR<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p><strong>Art. 6º, XXIII</strong> — Definição e 9 elementos obrigatórios (a-i).</p>
+<p><strong>Art. 18, §1º</strong> — O TR deve conter: justificativa da contratação (I), descrição da solução (II), caracterização da situação de dispensa/inexigibilidade se for o caso (III), justificativa dos quantitativos (IV).</p>
+<p><strong>Art. 40, §1º</strong> — O TR deve especificar: condições de execução e garantia (I), prazo de entrega (II), garantia e assistência técnica (III), indicação de marcas quando necessário (IV).</p>
+<p><strong>Art. 41</strong> — Indicação de marca: vedação geral, exceto quando: (I) necessária para padronização, (II) referência de qualidade com "ou equivalente", ou (III) vedação justificada de marca.</p>
+</div></div></div>
+
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">Decreto Estadual MT 1.525/2022 — Regulamentação estadual<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p><strong>Arts. 22 a 42</strong> — Planejamento da contratação (DFD, ETP, TR, Análise de Riscos).</p>
+<p><strong>Art. 66</strong> — Instrução processual: o TR é peça obrigatória (inciso I), com registro no SIAG (inciso III) e parecer de TI quando aplicável (inciso IV).</p>
+<p><strong>Arts. 43 a 52</strong> — Pesquisa de preços que alimenta o valor estimado do TR.</p>
+<p><strong>Art. 308</strong> — Designação de gestor e fiscal de contrato, que devem constar no TR.</p>
+<p><strong>Art. 276</strong> — Substituição de marca/produto durante a execução contratual.</p>
+<p><strong>Arts. 289, 290, 293</strong> — Prorrogação contratual (devem ser referenciados no TR para contratos contínuos).</p>
+</div></div></div>
+
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">Normas Complementares SESP-MT<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p><strong>IN 001/2025/SESP</strong> — Art. 13, §Único: Cientificação obrigatória do gestor e fiscal de contrato.</p>
+<p><strong>IN 002/2025/SESP</strong> — Art. 9º, I: DFD aprovado e no PCA. Art. 16, §3º: conformidade quando verba de convênio/FUNPEN/FNSP.</p>
+<p><strong>IN 04/2024</strong> — Checklist específico para obras e serviços de engenharia.</p>
+</div></div></div>
+</div>
+</section>
+
+<!-- ═══ MÓDULO 3 ═══ -->
+<section class="mod" id="m3">
+<div class="mod-hdr"><div class="mod-num">3</div><div class="mod-tg"><div class="mod-tag">Módulo 3 · Alíneas "a" a "i"</div><h2>Os 9 Elementos Obrigatórios do Termo de Referência</h2></div></div>
+
+<div class="card">
+<h3>Visão Panorâmica</h3>
+<p>Cada alínea do art. 6º, XXIII, corresponde a uma seção obrigatória do TR. Nos modelos da SESP-MT, essas alíneas se traduzem em cláusulas numeradas. A tabela abaixo cruza a exigência legal com a estrutura dos modelos:</p>
+<div class="tw"><table>
+<thead><tr><th>Alínea</th><th>Conteúdo Legal</th><th>Cláusula no Modelo SESP</th><th>Criticidade</th></tr></thead>
+<tbody>
+<tr><td><strong>a</strong></td><td>Definição do objeto (natureza, quantitativos, prazo, prorrogação)</td><td>1. Condições Gerais + 2. Vigência</td><td><span class="badge ro">Essencial</span></td></tr>
+<tr><td><strong>b</strong></td><td>Fundamentação da contratação (referência ao ETP)</td><td>3. Fundamentação e Descrição da Necessidade</td><td><span class="badge ro">Essencial</span></td></tr>
+<tr><td><strong>c</strong></td><td>Descrição da solução (ciclo de vida)</td><td>4. Descrição da Solução</td><td><span class="badge ro">Essencial</span></td></tr>
+<tr><td><strong>d</strong></td><td>Requisitos da contratação</td><td>6. Requisitos (sustentabilidade, marca, amostra)</td><td><span class="badge am">Alta</span></td></tr>
+<tr><td><strong>e</strong></td><td>Modelo de execução do objeto</td><td>7. Modelo de Execução (prazo, local, forma)</td><td><span class="badge am">Alta</span></td></tr>
+<tr><td><strong>f</strong></td><td>Modelo de gestão do contrato</td><td>8. Fiscalização Contratual</td><td><span class="badge am">Alta</span></td></tr>
+<tr><td><strong>g</strong></td><td>Critérios de medição e pagamento</td><td>9. Critério de Medição e Pagamento</td><td><span class="badge am">Alta</span></td></tr>
+<tr><td><strong>h</strong></td><td>Forma e critérios de seleção do fornecedor</td><td>5. Modalidade + 10. Habilitação + 11-13. ME/EPP</td><td><span class="badge am">Alta</span></td></tr>
+<tr><td><strong>i</strong></td><td>Estimativas de valor (preços unitários, memória de cálculo)</td><td>Itens 1.2 e 1.4 + Pesquisa de Preços (doc separado)</td><td><span class="badge ro">Essencial</span></td></tr>
+</tbody></table></div>
+</div>
+
+<div class="card">
+<h3>Alínea "a" — Definição do Objeto</h3>
+<p>A cláusula mais importante do TR. Corresponde à <strong>Cláusula 1</strong> (Condições Gerais) e <strong>Cláusula 2</strong> (Vigência) nos modelos SESP-MT. Deve conter:</p>
+<div class="ncards">
+<div class="ncard"><div class="ncard-num sk">1.1</div><div><h4>Objeto e Tabela de Itens</h4><p>Descrição sintética + tabela exportada do SIAG com itens, quantidades, valores unitários e total. Dois formatos: com benefício ME/EPP ou ampla concorrência.</p></div></div>
+<div class="ncard"><div class="ncard-num tl">1.2</div><div><h4>Custo Estimado Total</h4><p>Valor global apurado na pesquisa de preços conforme Decreto 1.525/2022. Deve ser consistente com o mapa comparativo.</p></div></div>
+<div class="ncard"><div class="ncard-num em">1.3</div><div><h4>Declaração de Não-Luxo</h4><p>O contratante declara que o objeto não se enquadra como bem de luxo, conforme o Decreto Estadual 1.525/2022.</p></div></div>
+<div class="ncard"><div class="ncard-num vi">1.5</div><div><h4>Justificativa de Quantitativos</h4><p>Levantamento por unidade, consumo de exercícios anteriores, memória de cálculo. Exigência do art. 18, §1º, IV da Lei 14.133.</p></div></div>
+<div class="ncard"><div class="ncard-num am">1.6</div><div><h4>Classificação do Objeto</h4><p>Se "comum" (art. 6º, XIII) — viabiliza pregão. Se serviço com dedicação exclusiva de mão de obra — modelo específico.</p></div></div>
+<div class="ncard"><div class="ncard-num bl">1.8</div><div><h4>Inexistência de ARP</h4><p>Declaração de que não há ata de registro de preços vigente para o objeto, verificada no site da SEPLAG e SESP.</p></div></div>
+</div>
+
+<div class="cbox">
+<div class="cbox-h"><span>📋</span><h4>Caso Prático — Cláusula 1 Mal Elaborada</h4><span class="cbox-tag">Erro comum</span></div>
+<div class="cbox-b">
+<p><strong>Problema:</strong> TR para aquisição de "materiais diversos de informática" com descrição genérica e sem tabela detalhada.</p>
+<p><strong>Risco:</strong> Impossibilidade de comparação de propostas, contestação por fornecedores, certame deserto. O art. 6º, XXIII, "a" exige "definição do objeto, incluídos sua natureza, os quantitativos, o prazo".</p>
+<p><strong>Correção:</strong> Especificar cada item com código CATMAT/CATSER, unidade de medida, quantidade e especificação técnica mínima. Ex.: "Notebook, tela 14", processador Intel Core i5 12ª geração ou superior, 16GB RAM DDR4, SSD 512GB NVMe, garantia 12 meses on-site."</p>
+</div>
+</div>
+</div>
+
+<div class="card">
+<h3>Alínea "b" — Fundamentação da Contratação</h3>
+<p>Corresponde à <strong>Cláusula 3</strong> dos modelos SESP-MT. É o "porquê" da contratação — não apenas o que se quer comprar, mas por que a Administração <em>precisa</em> comprar.</p>
+<div class="hbox">
+<p><strong>🧠 Regra prática:</strong> A fundamentação deve referenciar o ETP. Literalmente: "A contratação é necessária para (...), conforme demonstrado no Estudo Técnico Preliminar nº {SIGADOC}." Se o ETP não foi exigido, o próprio TR deve conter a fundamentação equivalente.</p>
+</div>
+<p>Elementos obrigatórios da fundamentação:</p>
+<ul>
+<li><strong>Necessidade institucional:</strong> Qual problema será resolvido? Qual atividade será atendida?</li>
+<li><strong>Referência ao ETP:</strong> O TR deve "apontar para" o ETP, não repeti-lo integralmente.</li>
+<li><strong>Caracterização da contratação direta</strong> (se aplicável): Na dispensa e inexigibilidade, o TR deve conter a caracterização legal da situação (art. 18, §1º, III e art. 75 ou 74 da Lei 14.133).</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Alínea "c" — Descrição da Solução</h3>
+<p>Corresponde à <strong>Cláusula 4</strong>. Deve considerar o <strong>ciclo de vida completo</strong> do objeto: aquisição, implantação, operação, manutenção e descarte/desativação.</p>
+<div class="hbox tl">
+<p><strong>💡 Exemplo:</strong> Para aquisição de condicionadores de ar, a "solução como um todo" não é apenas o equipamento — inclui instalação, manutenção preventiva, descarte do gás refrigerante conforme legislação ambiental e eventual desinstalação ao final do contrato.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Alíneas "d" a "i" — Requisitos, Execução, Gestão, Pagamento, Seleção e Valor</h3>
+<p>Estas 6 alíneas compõem o corpo operacional do TR. Cada uma será detalhada nos <strong>Módulos 6 a 10</strong> (Parte 2 deste guia), mas veja o mapeamento resumido:</p>
+<div class="igrid">
+<div class="iitem"><div class="iic sk">📋</div><h4>d) Requisitos</h4><p>Sustentabilidade, marca/modelo, amostra, carta de solidariedade, transição contratual. Cláusula 6.</p></div>
+<div class="iitem"><div class="iic tl">🔧</div><h4>e) Execução</h4><p>Prazos de entrega, local, forma (parcelada ou única), embalagens, substituições. Cláusula 7.</p></div>
+<div class="iitem"><div class="iic em">👁️</div><h4>f) Gestão</h4><p>Gestor, fiscal titular e substituto, segregação de funções, SIAG-C. Cláusula 8.</p></div>
+<div class="iitem"><div class="iic vi">💳</div><h4>g) Pagamento</h4><p>Recebimento provisório e definitivo, relatório circunstanciado, NF-e. Cláusula 9.</p></div>
+<div class="iitem"><div class="iic am">🏷️</div><h4>h) Seleção</h4><p>Modalidade licitatória, habilitação técnica, ME/EPP, consórcios, cooperativas. Cláusulas 5 e 10-13.</p></div>
+<div class="iitem"><div class="iic ro">💰</div><h4>i) Valor Estimado</h4><p>Estimativas com preços unitários, memórias de cálculo. Consta do TR (item 1.2/1.4) e em documento separado classificado.</p></div>
+</div>
+</div>
+</section>
+
+<!-- ═══ MÓDULO 4 ═══ -->
+<section class="mod" id="m4">
+<div class="mod-hdr"><div class="mod-num">4</div><div class="mod-tg"><div class="mod-tag">Módulo 4 · Árvore Decisória</div><h2>Qual Modelo de TR Utilizar?</h2></div></div>
+
+<div class="card">
+<h3>Navegando pelos 13 Modelos Oficiais da SESP-MT</h3>
+<p>A SESP-MT disponibiliza <strong>13 modelos de TR</strong>, cada um adequado a uma combinação de modalidade licitatória × tipo de objeto. A escolha errada do modelo pode gerar retrabalho e apontamentos do controle interno.</p>
+<p>Use a árvore decisória abaixo para identificar o modelo correto. Clique em cada nó para expandir:</p>
+</div>
+
+<!-- DECISION TREE -->
+<div class="dtree">
+
+<div class="dnode" onclick="toggleTree('t1')">
+<h4><span class="dot" style="background:var(--sky)"></span>Pergunta 1: Qual a modalidade da contratação?</h4>
+<p>Isso determina toda a estrutura do TR e os requisitos do checklist.</p>
+</div>
+<div class="dsub" id="t1">
+
+<div class="dnode" onclick="toggleTree('t1a')">
+<h4><span class="dot" style="background:var(--teal)"></span>Pregão Eletrônico (Art. 28, I)</h4>
+<p>Modalidade padrão para bens e serviços comuns. 8 modelos disponíveis.</p>
+</div>
+<div class="dsub" id="t1a">
+<div class="dnode" onclick="toggleTree('t1a1')">
+<h4><span class="dot" style="background:var(--emerald)"></span>Pergunta 2: Compra direta ou Registro de Preços?</h4>
+</div>
+<div class="dsub" id="t1a1">
+<div class="dnode active"><h4><span class="dot" style="background:var(--amber)"></span>Compra Direta — Qual tipo de objeto?</h4>
+<p>→ <strong>Bens de Consumo/Permanente:</strong> "TR Pregão — Bens de Consumo/Permanente"<br>
+→ <strong>Serviços SEM dedicação exclusiva de MO:</strong> "TR Pregão — Serviços sem Dedicação Exclusiva"<br>
+→ <strong>Serviços COM dedicação exclusiva de MO:</strong> "TR Pregão — Serviços com Dedicação Exclusiva" (modelo mais extenso, ~88k caracteres)</p></div>
+<div class="dnode active"><h4><span class="dot" style="background:var(--amber)"></span>Registro de Preços — Qual tipo de objeto?</h4>
+<p>→ <strong>Bens de Consumo/Permanente:</strong> "TR Pregão — RP — Bens de Consumo/Permanente"<br>
+→ <strong>Serviços SEM dedicação exclusiva de MO:</strong> "TR Pregão — RP — Serviços sem Dedicação Exclusiva"</p></div>
+</div>
+</div>
+
+<div class="dnode" onclick="toggleTree('t1b')">
+<h4><span class="dot" style="background:var(--violet)"></span>Dispensa de Licitação (Art. 75)</h4>
+<p>2 modelos, diferenciados pela existência de rodada de lances no SIAG.</p>
+</div>
+<div class="dsub" id="t1b">
+<div class="dnode active"><h4><span class="dot" style="background:var(--amber)"></span>COM consulta eletrônica (rodada de lances no SIAG)</h4>
+<p>→ <strong>Bens:</strong> "TR Dispensa — Com Consulta Eletrônica — Bens de Consumo/Permanente"<br>
+→ <strong>Serviços:</strong> "TR Dispensa — Com Consulta Eletrônica — Serviços sem Dedicação de MO"<br>
+<em>Checklist:</em> "Dispensa com Consulta no SIAG" (15 itens + documentos empresa)</p></div>
+<div class="dnode active"><h4><span class="dot" style="background:var(--amber)"></span>SEM consulta no SIAG</h4>
+<p>→ <strong>Serviços:</strong> "TR Dispensa — Sem Consulta no SIAG — Serviços"<br>
+<em>Checklist:</em> "Dispensa sem Consulta no SIAG" (34 itens + documentos empresa + declarações)<br>
+<strong>Exigência adicional:</strong> Justificativa da inviabilidade da divulgação no SIAG (Art. 150, §1º Dec. 1.525/2022) + Razão da Escolha do Fornecedor</p></div>
+</div>
+
+<div class="dnode" onclick="toggleTree('t1c')">
+<h4><span class="dot" style="background:var(--rose)"></span>Inexigibilidade (Art. 74)</h4>
+<p>3 modelos: bens, serviços, e locação de imóvel.</p>
+</div>
+<div class="dsub" id="t1c">
+<div class="dnode active"><h4><span class="dot" style="background:var(--amber)"></span>Modelos disponíveis:</h4>
+<p>→ <strong>Bens:</strong> "TR Inexigibilidade — Bens de Consumo/Permanente"<br>
+→ <strong>Serviços:</strong> "TR Inexigibilidade — Serviços sem Dedicação Exclusiva de MO"<br>
+→ <strong>Locação de Imóvel:</strong> "TR Inexigibilidade — Locação de Imóvel — P.F. e P.J."<br>
+<em>Exigência exclusiva:</em> Demonstração de inviabilidade de competição (art. 74, I-V) + Razão da escolha do contratado</p></div>
+</div>
+
+<div class="dnode" onclick="toggleTree('t1d')">
+<h4><span class="dot" style="background:var(--indigo)"></span>Adesão Carona (Art. 86)</h4>
+<p>2 modelos. TR mais curto (~14k caracteres) — não há pesquisa de preços própria.</p>
+</div>
+<div class="dsub" id="t1d">
+<div class="dnode active"><h4><span class="dot" style="background:var(--amber)"></span>Modelos disponíveis:</h4>
+<p>→ <strong>Bens:</strong> "TR Adesão Carona — Bens de Consumo/Permanente"<br>
+→ <strong>Serviços:</strong> "TR Adesão Carona — Serviços sem Dedicação Exclusiva de MO"<br>
+<em>Peculiaridade:</em> O TR referencia a ARP existente e justifica a vantagem da adesão em vez de licitação própria.</p></div>
+</div>
+
+</div>
+
+<div class="hbox vi">
+<p><strong>📌 Dica de escolha rápida:</strong> A pergunta mais comum é: "meu objeto tem dedicação exclusiva de mão de obra?" Se a resposta for <strong>SIM</strong>, só existe 1 modelo (Pregão — Serviços COM dedicação exclusiva). Se a resposta for <strong>NÃO</strong>, a diferença entre os demais está na modalidade (pregão, dispensa, inexigibilidade) e no tipo (bens vs. serviços).</p>
+</div>
+
+<div class="card">
+<h3>Checklists Correspondentes por Modalidade</h3>
+<p>Cada modalidade possui um checklist específico. O TR é sempre o <strong>item 3</strong> de todos os checklists. Abaixo, os documentos que acompanham o TR:</p>
+<div class="tw"><table>
+<thead><tr><th>Checklist</th><th>Itens Totais</th><th>Exigências Exclusivas</th></tr></thead>
+<tbody>
+<tr><td><span class="badge sk">Pregão</span></td><td>11</td><td>Cientificação do Gestor/Fiscal + cadastro SIAG-C</td></tr>
+<tr><td><span class="badge sk">Registro de Preços</span></td><td>7</td><td>Sem designação de fiscal (não há contrato imediato)</td></tr>
+<tr><td><span class="badge vi">Dispensa c/ consulta SIAG</span></td><td>15</td><td>Caracterização da situação de dispensa + limites art. 75</td></tr>
+<tr><td><span class="badge vi">Dispensa s/ consulta SIAG</span></td><td>34</td><td>Justificativa inviabilidade SIAG + docs empresa + declarações</td></tr>
+<tr><td><span class="badge ro">Inexigibilidade</span></td><td>32</td><td>Proposta original + exclusividade + docs habilitação empresa</td></tr>
+<tr><td><span class="badge tl">Adesão Carona</span></td><td>~20</td><td>Ata vigente + autorização órgão gerenciador</td></tr>
+</tbody></table></div>
+</div>
+</section>
+
+<!-- ═══ MÓDULO 5 — EXERCÍCIOS ═══ -->
+<section class="mod" id="m5">
+<div class="mod-hdr"><div class="mod-num">5</div><div class="mod-tg"><div class="mod-tag">Módulo 5 · Exercícios Interativos</div><h2>Teste seus Conhecimentos — Parte 1</h2></div></div>
+
+<!-- QUIZ 1 -->
+<div class="qcard" id="q1">
+<div class="qlb">🎯 Questão 1 de 5</div>
+<h4>Elementos Obrigatórios</h4>
+<p class="qq">Quantos elementos descritivos obrigatórios o art. 6º, XXIII da Lei 14.133/2021 exige no Termo de Referência?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q1',this,0)"><span class="ol">A</span> 5 elementos (a-e)</div>
+<div class="qopt" onclick="chk('q1',this,0)"><span class="ol">B</span> 7 elementos (a-g)</div>
+<div class="qopt" onclick="chk('q1',this,1)"><span class="ol">C</span> 9 elementos (a-i)</div>
+<div class="qopt" onclick="chk('q1',this,0)"><span class="ol">D</span> 12 elementos (a-l)</div>
+</div>
+<div class="qfb ok" id="q1ok">✅ <strong>Correto!</strong> São 9 alíneas: a) definição do objeto, b) fundamentação, c) solução, d) requisitos, e) execução, f) gestão, g) pagamento, h) seleção, i) valor estimado.</div>
+<div class="qfb no" id="q1no">❌ <strong>Incorreto.</strong> Resposta: C. O art. 6º, XXIII contém exatamente 9 alíneas (a-i), cada uma correspondendo a um elemento obrigatório do TR.</div>
+</div>
+
+<!-- QUIZ 2 -->
+<div class="qcard" id="q2">
+<div class="qlb">🎯 Questão 2 de 5</div>
+<h4>Coerência ETP × TR</h4>
+<p class="qq">O que ocorre quando o TR especifica soluções técnicas diferentes daquelas definidas no ETP, sem justificativa expressa?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q2',this,0)"><span class="ol">A</span> Nenhuma consequência, pois o TR prevalece sobre o ETP</div>
+<div class="qopt" onclick="chk('q2',this,1)"><span class="ol">B</span> Causa de nulidade da licitação por falha de planejamento</div>
+<div class="qopt" onclick="chk('q2',this,0)"><span class="ol">C</span> Apenas recomendação de ciência do TCU</div>
+<div class="qopt" onclick="chk('q2',this,0)"><span class="ol">D</span> O agente de contratação deve corrigir na fase externa</div>
+</div>
+<div class="qfb ok" id="q2ok">✅ <strong>Correto!</strong> O Acórdão 2273/2024-Plenário do TCU e o art. 71, III da Lei 14.133 tratam a incoerência ETP→TR como ilegalidade insanável, passível de nulidade da licitação.</div>
+<div class="qfb no" id="q2no">❌ <strong>Incorreto.</strong> Resposta: B. A incoerência entre ETP e TR compromete a motivação do ato administrativo. A Lei exige que o TR se fundamente nos estudos preliminares.</div>
+</div>
+
+<!-- QUIZ 3 -->
+<div class="qcard" id="q3">
+<div class="qlb">🎯 Questão 3 de 5</div>
+<h4>Escolha do Modelo</h4>
+<p class="qq">Uma unidade da SESP precisa contratar serviço de limpeza predial com empregados dedicados. Qual modelo de TR deve usar?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q3',this,0)"><span class="ol">A</span> TR Pregão — Serviços sem Dedicação Exclusiva de MO</div>
+<div class="qopt" onclick="chk('q3',this,1)"><span class="ol">B</span> TR Pregão — Serviços com Dedicação Exclusiva de MO</div>
+<div class="qopt" onclick="chk('q3',this,0)"><span class="ol">C</span> TR Dispensa — Serviços sem Dedicação de MO</div>
+<div class="qopt" onclick="chk('q3',this,0)"><span class="ol">D</span> TR Pregão — Bens de Consumo/Permanente</div>
+</div>
+<div class="qfb ok" id="q3ok">✅ <strong>Correto!</strong> Serviço de limpeza predial com empregados dedicados é serviço com dedicação exclusiva de mão de obra. O modelo específico inclui cláusulas de planilha de custos, convenção coletiva e controle de frequência.</div>
+<div class="qfb no" id="q3no">❌ <strong>Incorreto.</strong> Resposta: B. Limpeza predial com equipe dedicada é o exemplo clássico de serviço COM dedicação exclusiva. Existe modelo específico que inclui planilha de custos e formação de preço.</div>
+</div>
+
+<!-- QUIZ 4 -->
+<div class="qcard" id="q4">
+<div class="qlb">🎯 Questão 4 de 5</div>
+<h4>Análise Crítica</h4>
+<p class="qq">Na dispensa de licitação SEM consulta ao SIAG, qual documento adicional é exigido no TR que NÃO existe no TR de pregão?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q4',this,0)"><span class="ol">A</span> Mapa comparativo de preços</div>
+<div class="qopt" onclick="chk('q4',this,0)"><span class="ol">B</span> Declaração de não-luxo</div>
+<div class="qopt" onclick="chk('q4',this,1)"><span class="ol">C</span> Justificativa da inviabilidade de divulgação no SIAG e Razão da Escolha do Fornecedor</div>
+<div class="qopt" onclick="chk('q4',this,0)"><span class="ol">D</span> Parecer de TI</div>
+</div>
+<div class="qfb ok" id="q4ok">✅ <strong>Correto!</strong> Art. 150, §1º do Decreto 1.525/2022 exige justificativa da inviabilidade da divulgação no SIAG. Art. 72, VI da Lei 14.133 exige a Razão da Escolha do Fornecedor nas contratações diretas.</div>
+<div class="qfb no" id="q4no">❌ <strong>Incorreto.</strong> Resposta: C. São duas exigências exclusivas da dispensa sem consulta ao SIAG: a justificativa da inviabilidade de divulgação (Art. 150, §1º Dec. 1.525/2022) e a Razão da Escolha do Fornecedor (Art. 72, VI da Lei 14.133).</div>
+</div>
+
+<!-- QUIZ 5 -->
+<div class="qcard" id="q5">
+<div class="qlb">🎯 Questão 5 de 5</div>
+<h4>Responsabilização</h4>
+<p class="qq">Segundo o Acórdão 2.121/2024-TCU-Plenário, quem pode ser responsabilizado por aprovar um edital com TR deficiente?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q5',this,0)"><span class="ol">A</span> Apenas quem elaborou o TR</div>
+<div class="qopt" onclick="chk('q5',this,0)"><span class="ol">B</span> Apenas o ordenador de despesas</div>
+<div class="qopt" onclick="chk('q5',this,1)"><span class="ol">C</span> Toda a cadeia, incluindo pareceristas jurídicos que aprovaram sem ressalvas</div>
+<div class="qopt" onclick="chk('q5',this,0)"><span class="ol">D</span> Ninguém, se o edital seguiu modelo oficial</div>
+</div>
+<div class="qfb ok" id="q5ok">✅ <strong>Correto!</strong> O Acórdão 2.121/2024 aplicou multa de R$ 10.000 a pareceristas que aprovaram edital com falhas graves sem qualquer ressalva. A responsabilidade atinge toda a cadeia de aprovação.</div>
+<div class="qfb no" id="q5no">❌ <strong>Incorreto.</strong> Resposta: C. O TCU entendeu que emitir parecer jurídico aprovando um processo com erros grosseiros, sem apontar as falhas, configura negligência que extrapola a razoabilidade profissional.</div>
+</div>
+
+<!-- SCORE -->
+<div class="card" id="scoreCard" style="display:none;text-align:center;">
+<h3>🏆 Resultado Final</h3>
+<p style="font-size:2.5rem;font-weight:800;font-family:var(--fd);color:var(--sky);margin:16px 0;" id="scoreVal"></p>
+<p id="scoreMsg"></p>
+</div>
+
+<!-- CHECKLIST INTERATIVO -->
+<div class="card" style="margin-top:40px">
+<h3>📋 Checklist de Autoavaliação — Meu TR Está Completo?</h3>
+<p>Use este checklist para verificar se a <strong>parte estrutural</strong> do seu TR (Módulos 1-4) está adequada. Clique nos itens para marcar:</p>
+<div class="chk-list" id="chkList">
+<div class="chk-item" onclick="togChk(this)"><div class="chk-box"></div><div><span class="chk-txt">O TR está baseado em DFD aprovado e incluído no PCA</span><span class="chk-ref">Art. 66, I Dec. 1.525/2022 c/c Art. 9º, I IN 002/2025/SESP</span></div></div>
+<div class="chk-item" onclick="togChk(this)"><div class="chk-box"></div><div><span class="chk-txt">O ETP foi elaborado (ou sua dispensa justificada) e o TR é coerente com ele</span><span class="chk-ref">Art. 6º, XXIII, "b" Lei 14.133 — Acórdão 2273/2024-TCU</span></div></div>
+<div class="chk-item" onclick="togChk(this)"><div class="chk-box"></div><div><span class="chk-txt">O modelo de TR correto foi selecionado (modalidade × tipo de objeto)</span><span class="chk-ref">13 modelos SESP-MT</span></div></div>
+<div class="chk-item" onclick="togChk(this)"><div class="chk-box"></div><div><span class="chk-txt">A Cláusula 1 contém: objeto, tabela SIAG, custo estimado, classificação, inexistência de ARP</span><span class="chk-ref">Art. 6º, XXIII, "a" e "i" Lei 14.133</span></div></div>
+<div class="chk-item" onclick="togChk(this)"><div class="chk-box"></div><div><span class="chk-txt">Os quantitativos possuem justificativa fundamentada (consumo anterior, memória de cálculo)</span><span class="chk-ref">Art. 18, §1º, IV Lei 14.133 — Item 3.1 dos checklists</span></div></div>
+<div class="chk-item" onclick="togChk(this)"><div class="chk-box"></div><div><span class="chk-txt">A fundamentação da contratação (Cláusula 3) referencia o ETP e explica a necessidade</span><span class="chk-ref">Art. 6º, XXIII, "b" Lei 14.133</span></div></div>
+<div class="chk-item" onclick="togChk(this)"><div class="chk-box"></div><div><span class="chk-txt">A solução foi descrita considerando o ciclo de vida (Cláusula 4)</span><span class="chk-ref">Art. 6º, XXIII, "c" Lei 14.133</span></div></div>
+<div class="chk-item" onclick="togChk(this)"><div class="chk-box"></div><div><span class="chk-txt">Todas as 9 alíneas (a-i) do art. 6º, XXIII estão contempladas no TR</span><span class="chk-ref">Art. 6º, XXIII, "a" a "i" Lei 14.133</span></div></div>
+</div>
+</div>
+
+<!-- NAV -->
+<!-- ═══ MÓDULO 6 ═══ -->
+<section class="mod" id="m6">
+<div class="mod-hdr"><div class="mod-num">6</div><div class="mod-tg"><div class="mod-tag">Módulo 6 · Alínea "d" — Cláusula 6</div><h2>Requisitos da Contratação</h2></div></div>
+
+<div class="card">
+<h3>Visão Geral — O que São os "Requisitos"?</h3>
+<p>Os requisitos são todas as <strong>condições que o contratado deve atender</strong> para ser habilitado e executar o objeto. A Cláusula 6 dos modelos SESP-MT organiza esses requisitos em blocos temáticos. Cada bloco é <strong>condicional</strong> — use apenas o que for pertinente ao seu objeto.</p>
+</div>
+
+<div class="card">
+<h3>6.1 — Sustentabilidade</h3>
+<p>Obrigatório em todos os TRs. Deve contemplar, no mínimo, os quatro temas-base do Guia Nacional de Contratações Sustentáveis:</p>
+<div class="igrid">
+<div class="iitem"><div class="iic em">⚡</div><h4>Economia de energia</h4><p>Equipamentos com selo PROCEL, modo standby, eficiência energética.</p></div>
+<div class="iitem"><div class="iic tl">🧴</div><h4>Plásticos descartáveis</h4><p>Redução de embalagens, substituição por materiais recicláveis.</p></div>
+<div class="iitem"><div class="iic bl">💧</div><h4>Economia de água</h4><p>Dispositivos economizadores, reuso quando viável.</p></div>
+<div class="iitem"><div class="iic ro">♻️</div><h4>Descarte correto</h4><p>Pilhas, lâmpadas, eletrônicos, EPI contaminados — logística reversa.</p></div>
+</div>
+<div class="hbox tl">
+<p><strong>💡 Dica:</strong> Itens 6.1.2 e 6.1.2.1 são opcionais — use quando houver critérios adicionais além dos quatro obrigatórios. Se não houver, suprima explicitamente: "Não há critérios de sustentabilidade adicionais além dos previstos nos itens 6.1.1.1 a 6.1.1.4."</p>
+</div>
+</div>
+
+<div class="card">
+<h3>6.2 a 6.7 — Requisitos Condicionais</h3>
+<p>Os itens abaixo <strong>devem ser avaliados caso a caso</strong>. A regra geral nos modelos é: se não se aplica, <strong>suprima o item</strong> — não deixe em branco.</p>
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">6.2 — Indicação de Marcas ou Modelos (Art. 41, I)<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p>A regra geral é a <strong>vedação</strong> de indicação de marca. Três exceções admitidas:</p>
+<p><strong>Padronização (art. 41, I):</strong> Marca indicada como necessária à padronização — exige justificativa no ETP.</p>
+<p><strong>Referência de qualidade (art. 41, II):</strong> Marca como referência, sempre seguida de "ou equivalente", "ou similar", "ou de melhor qualidade".</p>
+<p><strong>Vedação de marca (art. 41, III):</strong> Quando há decisão administrativa anterior (processo nº...) vedando determinado produto.</p>
+<p>Se nenhuma dessas hipóteses se aplica, <strong>suprima os itens 6.2 a 6.4.2 integralmente</strong>.</p>
+</div></div></div>
+
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">6.5 — Amostra e/ou Prova de Conceito<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p>Utilize apenas quando a verificação prévia da qualidade for essencial. O TCU exige que a exigência de amostras tenha <strong>motivação</strong> e <strong>critérios objetivos de avaliação</strong> (Acórdão 529/2018-Plenário).</p>
+<p>Se não for necessário, suprima os itens 6.5 a 6.5.1.1.</p>
+</div></div></div>
+
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">6.6 — Carta de Solidariedade do Fabricante<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p>Carta emitida pelo fabricante ao revendedor/distribuidor, assegurando a execução do contrato. <strong>Só exigir em casos excepcionais</strong> com motivação nos autos. Não cabível para objetos simples ou commodities. O TCU já questionou exigências de carta de solidariedade sem fundamentação técnica (Acórdão referência: decisões de 2024 sobre requisitos restritivos).</p>
+</div></div></div>
+
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">6.7 — Transição Contratual<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p>Transferência de conhecimento, tecnologia e técnicas ao encerrar o contrato. <strong>Essencial para TI e serviços especializados.</strong> Para bens simples (material de expediente, por exemplo), suprima.</p>
+</div></div></div>
+
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">6.2 — Ações Afirmativas (modelo com dedicação exclusiva de MO)<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p>Exclusivo do modelo de serviços com dedicação exclusiva. Pode exigir percentual mínimo de mulheres vítimas de violência doméstica ou egressos do sistema prisional. Se não aplicável, deve haver <strong>justificativa expressa da não exigência</strong>.</p>
+</div></div></div>
+</div>
+</section>
+
+<!-- ═══ MÓDULO 7 ═══ -->
+<section class="mod" id="m7">
+<div class="mod-hdr"><div class="mod-num">7</div><div class="mod-tg"><div class="mod-tag">Módulo 7 · Alínea "e" — Cláusula 7</div><h2>Modelo de Execução do Objeto</h2></div></div>
+
+<div class="card">
+<h3>O Modelo de Execução Define o "Como"</h3>
+<p>Enquanto a Cláusula 1 define "o quê", a Cláusula 7 define <strong>como o contrato será executado na prática</strong>: prazos, locais, forma de entrega, embalagens, e procedimentos operacionais. A estrutura varia conforme o tipo de objeto:</p>
+<div class="tw"><table>
+<thead><tr><th>Elemento</th><th>Bens</th><th>Serviços sem MO dedicada</th><th>Serviços com MO dedicada</th></tr></thead>
+<tbody>
+<tr><td><strong>Prazo de execução</strong></td><td>Dias úteis após requisição</td><td>Início em X dias após OS</td><td>Início em X dias + horário semanal</td></tr>
+<tr><td><strong>Local</strong></td><td>Endereço de entrega</td><td>Local de prestação</td><td>Local + possibilidade feriados/noturno</td></tr>
+<tr><td><strong>Forma</strong></td><td>Entrega única ou parcelada</td><td>Regime (preço global/unitário/tarefa)</td><td>Regime + rotinas + descrição detalhada</td></tr>
+<tr><td><strong>Embalagem</strong></td><td>Padrão fabricante, recicláveis</td><td>N/A</td><td>N/A</td></tr>
+<tr><td><strong>Substituição</strong></td><td>Art. 276 Dec. 1.525/2022</td><td>Reposição imediata de MO</td><td>Reposição imediata + controle frequência</td></tr>
+</tbody></table></div>
+</div>
+
+<div class="card">
+<h3>Elementos Obrigatórios da Cláusula 7 — Bens</h3>
+<div class="steps">
+<div class="stp"><div class="stp-l"><div class="stp-d sk">7.2</div><div class="stp-c"></div></div><div class="stp-r"><h4>Prazo de entrega</h4><p><strong>Escopo:</strong> "até (...) dias úteis contados do recebimento formal da requisição". <strong>Contínuo:</strong> "sob demanda, por requisição, conforme quantitativo do contrato".</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d tl">7.7</div><div class="stp-c"></div></div><div class="stp-r"><h4>Local de entrega</h4><p>Endereço completo. Peculiaridades de acesso (horários, restrições de carga).</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d em">7.10</div><div class="stp-c"></div></div><div class="stp-r"><h4>Transporte e embalagem</h4><p>Responsabilidade do contratado. Embalagem individual, materiais recicláveis, informações em português (marca, CNPJ fabricante, validade, composição).</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d vi">7.15</div><div class="stp-c"></div></div><div class="stp-r"><h4>Vedação à troca de marca</h4><p>Não será aceita troca de marca/fabricante sem aditivo contratual prévio (Art. 276 Dec. 1.525/2022).</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d am">7.8</div></div><div class="stp-r"><h4>Validade (perecíveis)</h4><p>Se aplicável: "prazo de validade na entrega não inferior a (...) dias/meses, ou (metade/dois terços) do prazo total do fabricante".</p></div></div>
+</div>
+</div>
+
+<div class="hbox am">
+<p><strong>⚠️ Exclusivo do modelo com dedicação de MO:</strong> A Cláusula 7 inclui também: Cláusula 8 (Requisitos de Formação dos Profissionais), Cláusula 9 (Materiais e Uniformes — especificação de peças, frequência de substituição), e Cláusula 10 (Vistoria Prévia). Esses três blocos <strong>não existem</strong> nos modelos de bens.</p>
+</div>
+</section>
+
+<!-- ═══ MÓDULO 8 ═══ -->
+<section class="mod" id="m8">
+<div class="mod-hdr"><div class="mod-num">8</div><div class="mod-tg"><div class="mod-tag">Módulo 8 · Alínea "f" — Cláusula 8/12</div><h2>Fiscalização Contratual</h2></div></div>
+
+<div class="card">
+<h3>Segregação de Funções: Gestor ≠ Fiscal</h3>
+<p>O Decreto 1.525/2022 exige uma estrutura de controle com <strong>três papéis distintos</strong>, cada um com atribuições definidas em lei:</p>
+<div class="igrid">
+<div class="iitem"><div class="iic sk">👔</div><h4>Gestor do Contrato</h4><p>Servidor da unidade de controle. Responsável pela visão estratégica: prorrogações, sanções, relatórios semestrais. <strong>Art. 14 Dec. 1.525/2022.</strong></p></div>
+<div class="iitem"><div class="iic tl">🔍</div><h4>Fiscal Titular</h4><p>Agente público com qualificação técnica. Acompanha o dia a dia: ocorrências, medição, qualidade. <strong>Art. 15 e 312 Dec. 1.525/2022.</strong></p></div>
+<div class="iitem"><div class="iic vi">🔄</div><h4>Fiscal Substituto</h4><p>Assume nas ausências legais do titular. Deve ter a mesma qualificação. <strong>Art. 308, §4º Dec. 1.525/2022.</strong></p></div>
+</div>
+
+<div class="lbox">
+<div class="lbox-lb">📖 Exigências do Checklist</div>
+<p>Item 6 (Pregão): "Cientificação do Gestor e Fiscal(is) expressamente pela Unidade, da indicação e respectivas atribuições, conforme <strong>§4º do Art. 308</strong> do Decreto Estadual 1.525/2022 c/c <strong>Art. 13, §Único da IN 001/2025/SESP</strong>."</p>
+<p>Item 7 (Pregão): "Comprovante de cadastramento do Gestor e Fiscal(is) junto ao <strong>módulo contratos SIAG-C</strong>, conforme IN 001/2025/SESP."</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Especificidades para Serviços com Dedicação Exclusiva de MO</h3>
+<p>O modelo de TR com dedicação exclusiva amplia significativamente a fiscalização. Além das regras gerais, inclui:</p>
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">Fiscalização Trabalhista — Mensal e Inicial<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p><strong>Fiscalização inicial:</strong> Planilha-resumo com todos os empregados (nome, CPF, função, salário, benefícios, horário). Conferência da CTPS. Verificação de que o número de terceirizados coincide com o contrato. Salário não pode ser inferior à CCT.</p>
+<p><strong>Fiscalização mensal:</strong> Retenção previdenciária de 11%. Exigência de certidões negativas (Federal, Estadual, Municipal, FGTS, CNDT). Conferência por amostragem dos empregados em posto.</p>
+<p>Fundamentação: IN 01/2020/SEPLAG, art. 30.</p>
+</div></div></div>
+
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">Proibição de Subordinação Direta<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p>O contratante <strong>não pode dar ordens diretas</strong> aos terceirizados — toda comunicação deve ser via preposto. Negociação de folgas, compensação de jornada e alterações de horário são <strong>exclusivas do contratado</strong>. Violar essa regra pode configurar vínculo empregatício (Súmula 331, TST).</p>
+</div></div></div>
+
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">Relatório e SIAG-C<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p>Todas as ocorrências devem ser documentadas e anexadas ao Relatório conforme <strong>art. 294 Dec. 1.525/2022</strong>. O Relatório é o ato que concretiza o recebimento provisório. A operacionalização deve ser feita pelo <strong>SIAG-C</strong> (Sistema de Aquisições Governamentais — Contratos).</p>
+</div></div></div>
+</div>
+</section>
+
+<!-- ═══ MÓDULO 9 ═══ -->
+<section class="mod" id="m9">
+<div class="mod-hdr"><div class="mod-num">9</div><div class="mod-tg"><div class="mod-tag">Módulo 9 · Alínea "g" — Cláusula 9/13</div><h2>Critérios de Medição e Pagamento</h2></div></div>
+
+<div class="card">
+<h3>O Fluxo: Recebimento Provisório → Definitivo → Pagamento</h3>
+<div class="steps">
+<div class="stp"><div class="stp-l"><div class="stp-d sk">1</div><div class="stp-c"></div></div><div class="stp-r"><h4>Recebimento Provisório</h4><p>Pela fiscalização, mediante <strong>Relatório</strong> com registro, análise e conclusão. Se irregular, fixa prazo para correção. Se OK, autoriza emissão da NF. Bens: art. 140, II, "a" da Lei 14.133. Serviços: art. 140, I, "a".</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d tl">2</div><div class="stp-c"></div></div><div class="stp-r"><h4>Impugnação (se houver)</h4><p>Contratado tem até <strong>(...) dias úteis</strong> para impugnar o Relatório. A fiscalização emite novo Relatório em até (...) dias úteis com análise dos argumentos.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d em">3</div><div class="stp-c"></div></div><div class="stp-r"><h4>Recebimento Definitivo</h4><p>Em até <strong>(...) dias úteis</strong> após o provisório. Por servidor ou comissão diferente da fiscalização. Emite Termo Circunstanciado + assinatura no DANFE/NF.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d vi">4</div><div class="stp-c"></div></div><div class="stp-r"><h4>Pagamento</h4><p>Até <strong>30 dias</strong> após NF atestada. Via ordem bancária. Exige certidões de regularidade fiscal (Federal, Estadual MT, FGTS, CNDT, Municipal). Correção por IPCA se atraso for culpa da Administração.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d am">!</div></div><div class="stp-r"><h4>Garantia pós-recebimento</h4><p>Recebimento provisório ou definitivo <strong>não excluem</strong> responsabilidade civil, garantia do produto ou vícios ocultos (Art. 18 do CDC).</p></div></div>
+</div>
+</div>
+
+<div class="card">
+<h3>IMR — Instrumento de Medição de Resultado</h3>
+<p>Exclusivo de <strong>serviços contínuos com dedicação de MO</strong>. O IMR é um anexo do TR que define indicadores objetivos de qualidade, com fórmulas para glosas proporcionais.</p>
+<div class="hbox ro">
+<p><strong>⚠️ Atenção:</strong> A IN 01/2020/SEPLAG, art. 23, exige que a execução seja acompanhada por instrumentos de controle com mensuração de resultados. Sem critérios e parâmetros objetivos no IMR, a cláusula de glosa torna-se <strong>inexequível</strong> — é como ter uma multa sem definir a infração.</p>
+</div>
+<p>O IMR deve medir: resultados alcançados, recursos humanos empregados, qualidade e quantidade dos materiais, adequação à rotina de execução, cumprimento das obrigações contratuais, e satisfação do público usuário.</p>
+</div>
+
+<div class="card">
+<h3>Repactuação (apenas serviços com dedicação exclusiva de MO)</h3>
+<p>Os modelos com dedicação exclusiva incluem a <strong>Cláusula 21</strong> inteira sobre repactuação — é uma das cláusulas mais extensas e técnicas do TR. Pontos críticos:</p>
+<ul>
+<li><strong>Interregno mínimo:</strong> 1 ano para o primeiro reajuste, contado da data-base da CCT (para MO) ou da proposta (para demais custos).</li>
+<li><strong>Divisão em parcelas:</strong> A repactuação pode ser fracionada (MO numa data, insumos noutra).</li>
+<li><strong>Preclusão:</strong> Se não solicitada até a prorrogação seguinte, o direito se perde.</li>
+<li><strong>Ajustes obrigatórios após 12 meses:</strong> Aviso prévio trabalhado (para 0,194%) e substituto de férias (provisionamento de 1,62%).</li>
+<li><strong>Formalização:</strong> Por apostilamento (art. 275 Dec. 1.525/2022), não aditivo.</li>
+</ul>
+</div>
+</section>
+
+<!-- ═══ MÓDULO 10 ═══ -->
+<section class="mod" id="m10">
+<div class="mod-hdr"><div class="mod-num">10</div><div class="mod-tg"><div class="mod-tag">Módulo 10 · Alínea "h" — Cláusulas 5 e 10 a 17</div><h2>Seleção do Fornecedor: Modalidade, Habilitação e ME/EPP</h2></div></div>
+
+<div class="card">
+<h3>Cláusula 5 — Fundamentação da Modalidade Licitatória</h3>
+<p>Nos modelos de pregão, a cláusula é direta: "modalidade PREGÃO, forma ELETRÔNICA, critério de julgamento MENOR PREÇO." A justificativa se baseia no item 1.6 (classificação como bem/serviço comum, art. 6º, XIII).</p>
+<p>Nos modelos de dispensa, deve haver fundamentação adicional no art. 75 (inciso I ou II) e enquadramento nos limites de valor. Nos de inexigibilidade, a fundamentação recai sobre o art. 74 (incisos I a V).</p>
+</div>
+
+<div class="card">
+<h3>Habilitação Técnica — O Cuidado com Exigências Restritivas</h3>
+<p>A Cláusula 10 (ou 14 no modelo com MO dedicada) trata da habilitação. <strong>Erros nesta cláusula são os mais frequentes em apontamentos do TCU</strong>:</p>
+<div class="tw"><table>
+<thead><tr><th>Exigência</th><th>Fundamento</th><th>Risco se Mal Aplicada</th></tr></thead>
+<tbody>
+<tr><td>Atestado de capacidade técnica</td><td>Art. 67 Lei 14.133</td><td>Restritividade se exigir quantitativos excessivos (Acórdão 1998/2024)</td></tr>
+<tr><td>Vedação de atestado de grupo</td><td>Modelos SESP</td><td>Atestado de empresa do mesmo grupo não é válido</td></tr>
+<tr><td>Documentos adicionais</td><td>Art. 131, §1º Dec. 1.525</td><td>Cada exigência adicional deve ser justificada como necessária e não restritiva</td></tr>
+</tbody></table></div>
+<div class="hbox ro">
+<p><strong>⚠️ Regra TCU (Acórdão 1998/2024-Plenário):</strong> A ausência de parâmetros objetivos para qualificação técnico-operacional contraria a transparência e a impessoalidade. Não basta pedir "atestado de capacidade" — é preciso definir <strong>o quê</strong> o atestado deve comprovar, em termos quantitativos e qualitativos.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Tratamento Diferenciado ME/EPP — Árvore de Decisão</h3>
+<p>A Cláusula 11 (ou 15) é a mais complexa em termos de opções. A LC 123/2006, a LC Estadual 605/2018 e o Decreto 1.525/2022 criam 4 cenários possíveis:</p>
+<div class="ncards">
+<div class="ncard"><div class="ncard-num em">1</div><div><h4>Exclusivo ME/EPP</h4><p>Todos os itens até R$ 80.000. Art. 48, I da LC 123/2006. Usar os itens 11.1-11.2 (participação exclusiva).</p></div></div>
+<div class="ncard"><div class="ncard-num sk">2</div><div><h4>Ampla Concorrência Pura</h4><p>Todos os itens acima de R$ 80.000, sem cota reservada. Usar item 11.1 (ampla concorrência).</p></div></div>
+<div class="ncard"><div class="ncard-num am">3</div><div><h4>Misto: Exclusivo + Ampla</h4><p>Itens abaixo de 80k (exclusivo) + acima (ampla). Usar 11.1 (misto). Para ampla, avaliar cota reservada.</p></div></div>
+<div class="ncard"><div class="ncard-num vi">4</div><div><h4>Ampla com Cota Reservada</h4><p>Bens de natureza divisível: reserva de até 25% para ME/EPP (art. 25 LC Estadual 605/2018). Se indivisível: justificar a não aplicação.</p></div></div>
+</div>
+<div class="hbox">
+<p><strong>🧠 Regra prática SESP:</strong> Para serviços, geralmente não há cota reservada (art. 48, III da LC 123 e art. 81, VI do Dec. 1.525 limitam a bens divisíveis). Os itens 11.5 e 11.6 (desempate 5%) devem ser <strong>suprimidos</strong> quando a participação for exclusiva. Itens 11.10-11.12 (adjudicação da cota) só existem quando há cota reservada.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Consórcios e Cooperativas</h3>
+<div class="tw"><table>
+<thead><tr><th>Tema</th><th>Regra Geral SESP</th><th>Fundamento</th></tr></thead>
+<tbody>
+<tr><td><strong>Consórcios</strong></td><td>Vedação padrão (objeto não complexo, mercado suficiente)</td><td>Art. 15 Lei 14.133 — Caso permita: limite de empresas + majoração econômico-financeira</td></tr>
+<tr><td><strong>Cooperativas</strong></td><td>Vedação padrão para serviços com MO (Súmula 281 TCU)</td><td>Risco de precarização trabalhista. Para bens: art. 16 Lei 14.133</td></tr>
+</tbody></table></div>
+</div>
+
+<!-- QUIZ -->
+<div class="qcard" id="q6">
+<div class="qlb">🎯 Questão 6 de 8</div>
+<h4>Sustentabilidade</h4>
+<p class="qq">Os critérios mínimos de sustentabilidade na Cláusula 6 incluem economia de energia, plásticos, água e descarte correto. Se o seu objeto não tem requisitos adicionais de sustentabilidade, o que você deve fazer?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q6',this,0)"><span class="ol">A</span> Deixar os itens 6.1.2 e 6.1.2.1 em branco</div>
+<div class="qopt" onclick="chk('q6',this,1)"><span class="ol">B</span> Suprimir os itens 6.1.2 e 6.1.2.1 expressamente</div>
+<div class="qopt" onclick="chk('q6',this,0)"><span class="ol">C</span> Remover toda a seção de sustentabilidade</div>
+<div class="qopt" onclick="chk('q6',this,0)"><span class="ol">D</span> Manter os itens com "N/A"</div>
+</div>
+<div class="qfb ok" id="q6ok">✅ <strong>Correto!</strong> Os modelos SESP instruem: "caso não haja mais critérios de sustentabilidade, suprimir os itens 6.1.2 e 6.1.2.1". Itens em branco ou com "N/A" geram ambiguidade.</div>
+<div class="qfb no" id="q6no">❌ <strong>Incorreto.</strong> Resposta: B. A orientação dos modelos é clara: itens não aplicáveis devem ser suprimidos, não deixados em branco.</div>
+</div>
+
+<div class="qcard" id="q7">
+<div class="qlb">🎯 Questão 7 de 8</div>
+<h4>Fiscalização</h4>
+<p class="qq">Nos serviços com dedicação exclusiva de MO, por que o contratante NÃO pode dar ordens diretas aos terceirizados?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q7',this,0)"><span class="ol">A</span> Porque viola o Decreto 1.525/2022</div>
+<div class="qopt" onclick="chk('q7',this,1)"><span class="ol">B</span> Porque pode configurar vínculo empregatício (Súmula 331/TST)</div>
+<div class="qopt" onclick="chk('q7',this,0)"><span class="ol">C</span> Porque os terceirizados não são servidores públicos</div>
+<div class="qopt" onclick="chk('q7',this,0)"><span class="ol">D</span> Porque o preposto precisa justificar horas extras</div>
+</div>
+<div class="qfb ok" id="q7ok">✅ <strong>Correto!</strong> A Súmula 331 do TST trata da responsabilidade subsidiária da Administração em contratos de terceirização. A subordinação direta pode ser interpretada como vínculo empregatício, transferindo responsabilidades trabalhistas ao órgão público.</div>
+<div class="qfb no" id="q7no">❌ <strong>Incorreto.</strong> Resposta: B. O risco principal é trabalhista: ordens diretas + habitualidade podem configurar vínculo de emprego com o órgão público.</div>
+</div>
+
+<div class="qcard" id="q8">
+<div class="qlb">🎯 Questão 8 de 8</div>
+<h4>ME/EPP</h4>
+<p class="qq">Uma licitação para aquisição de 500 unidades de papel A4 (valor estimado R$ 65.000) deve ter que tipo de participação?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q8',this,1)"><span class="ol">A</span> Participação exclusiva de ME/EPP (valor até R$ 80.000)</div>
+<div class="qopt" onclick="chk('q8',this,0)"><span class="ol">B</span> Ampla concorrência sem cota reservada</div>
+<div class="qopt" onclick="chk('q8',this,0)"><span class="ol">C</span> Ampla concorrência com cota reservada de 25%</div>
+<div class="qopt" onclick="chk('q8',this,0)"><span class="ol">D</span> Depende da decisão do ordenador de despesas</div>
+</div>
+<div class="qfb ok" id="q8ok">✅ <strong>Correto!</strong> Art. 48, I da LC 123/2006: contratações com valor até R$ 80.000 devem ter participação exclusiva de ME/EPP. Como o valor estimado é R$ 65.000, aplica-se a exclusividade.</div>
+<div class="qfb no" id="q8no">❌ <strong>Incorreto.</strong> Resposta: A. O limite da LC 123/2006, art. 48, I é R$ 80.000 — abaixo desse valor, a participação é exclusiva de ME/EPP, sem discricionariedade.</div>
+</div>
+
+
+
+
+<!-- ═══ MÓDULO 11 ═══ -->
+<section class="mod" id="m11">
+<div class="mod-hdr"><div class="mod-num">11</div><div class="mod-tg"><div class="mod-tag">Módulo 11 · Cláusulas Finais</div><h2>Garantias, Subcontratação, Sanções e Obrigações</h2></div></div>
+
+<div class="card">
+<h3>Garantia Contratual (Art. 96 Lei 14.133)</h3>
+<p>A garantia contratual é a segurança financeira que a Administração exige do contratado para cobrir inadimplências. <strong>Nos modelos SESP, há 3 opções:</strong></p>
+<div class="ncards">
+<div class="ncard"><div class="ncard-num em">1</div><div><h4>Sem Garantia</h4><p>"Não haverá exigência de garantia contratual da execução, conforme art. 96 da Lei 14.133/2021." Justificativa obrigatória.</p></div></div>
+<div class="ncard"><div class="ncard-num am">2</div><div><h4>Garantia Simples</h4><p>Até <strong>5%</strong> do valor do contrato (inicial, total ou anual). Art. 96 da Lei 14.133.</p></div></div>
+<div class="ncard"><div class="ncard-num ro">3</div><div><h4>Garantia com Bens</h4><p>Art. 96 + art. 101: percentual do contrato <strong>acrescido do valor dos bens</strong> dos quais o contratado será depositário.</p></div></div>
+</div>
+<div class="hbox">
+<p><strong>🧠 Regra prática:</strong> Em qualquer caso, o item 26.2 deve sempre constar: "As regras específicas acerca da prestação da garantia estão indicadas na minuta do contrato administrativo." A modalidade (caução, seguro-garantia ou fiança bancária) é definida na minuta, não no TR.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Garantia do Produto/Serviço ≠ Garantia Contratual</h3>
+<p>Não confundir! A <strong>garantia do produto</strong> (Cláusula 14 nos modelos de bens ou Cláusula 18 nos de serviços) trata do período pós-recebimento definitivo:</p>
+<div class="tw"><table>
+<thead><tr><th>Tipo</th><th>Prazo</th><th>Fundamento</th></tr></thead>
+<tbody>
+<tr><td><strong>Garantia mínima contratual</strong></td><td>Definido no TR (ex.: 12 meses)</td><td>Art. 40, §1º, III Lei 14.133</td></tr>
+<tr><td><strong>Garantia do fabricante</strong></td><td>Se superior à contratual, prevalece</td><td>Modelo SESP-MT</td></tr>
+<tr><td><strong>Garantia legal (CDC)</strong></td><td>90 dias (bens duráveis)</td><td>Art. 26 Lei 8.078/1990</td></tr>
+</tbody></table></div>
+<p>A garantia abrange: manutenção corretiva, substituição de peças, ajustes e reparos — <strong>sem custo para o contratante</strong>.</p>
+</div>
+
+<div class="card">
+<h3>Subcontratação</h3>
+<p>A regra nos modelos SESP é a <strong>vedação</strong>, mas há possibilidade de permitir com limite percentual:</p>
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">Vedação (padrão)<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p>"É vedada a subcontratação do objeto deste contrato, tendo em vista que (...)." Exige justificativa. Casos típicos: objeto simples, mercado com fornecedores diretos.</p>
+</div></div></div>
+<div class="acc-item"><button class="acc-btn" onclick="togAcc(this)">Permissão com limite<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button><div class="acc-body"><div class="acc-inner">
+<p>Se permitida: limite em % do valor total, autorização prévia do contratante, comprovação de capacidade técnica do subcontratado. <strong>Vedações absolutas:</strong> subcontratação completa, parcela principal, e subcontratação de pessoa com vínculo com dirigentes/agentes do órgão (art. 9º, §1º Lei 14.133).</p>
+</div></div></div>
+</div>
+
+<div class="card">
+<h3>Matriz de Alocação de Riscos</h3>
+<p>Na grande maioria dos TRs da SESP-MT, a matriz é dispensada com base no <strong>art. 247, §4º, I, do Decreto 1.525/2022</strong>: "natureza comum do objeto e da execução". Se o objeto for complexo ou de alto valor, a matriz deve ser elaborada como anexo do TR.</p>
+</div>
+
+<div class="card">
+<h3>Sanções Administrativas</h3>
+<p>Os modelos SESP-MT são sintéticos neste ponto: "A minuta do contrato detalha as regras, procedimentos e parâmetros do sancionamento administrativo." Isso significa que o <strong>detalhamento das sanções fica na minuta contratual</strong>, não no TR.</p>
+<div class="hbox ro">
+<p><strong>⚠️ Atenção:</strong> Ainda que o detalhamento esteja na minuta, o TR deve conter a previsão de sancionamento. A Lei 14.133/2021, arts. 155 a 163, tipifica as infrações e sanções: advertência, multa, impedimento de licitar (até 3 anos), declaração de inidoneidade (3 a 6 anos). O Decreto MT 1.525/2022 regulamenta nos arts. 334 a 365.</p>
+</div>
+</div>
+
+<div class="card">
+<h3>Obrigações do Contratante e do Contratado</h3>
+<p>As cláusulas 24/25 (ou equivalentes) listam obrigações recíprocas. Pontos críticos que devem estar no TR:</p>
+<div class="igrid">
+<div class="iitem"><div class="iic sk">📋</div><h4>Contratado</h4><p>Executar conforme TR, manter habilitação, fornecer EPI, NÃO sublocar/ceder, reparar danos, substituir MO quando necessário, realizar transição contratual.</p></div>
+<div class="iitem"><div class="iic tl">🏛️</div><h4>Contratante</h4><p>Designar fiscal/gestor, fornecer dados necessários, disponibilizar local, notificar irregularidades, pagar em 30 dias, NÃO exercer ingerência na administração do contratado.</p></div>
+</div>
+<div class="hbox am">
+<p><strong>📌 Ponto crítico (dedicação de MO):</strong> O contratante deve expressamente se comprometer a NÃO: exercer mando sobre empregados do contratado, direcionar contratação de pessoas, promover desvio de funções. Esses itens protegem contra a configuração de vínculo empregatício.</p>
+</div>
+</div>
+</section>
+
+<!-- ═══ MÓDULO 12 ═══ -->
+<section class="mod" id="m12">
+<div class="mod-hdr"><div class="mod-num">12</div><div class="mod-tg"><div class="mod-tag">Módulo 12 · Peculiaridades por Modalidade</div><h2>Inexigibilidade, Adesão Carona e Locação de Imóvel</h2></div></div>
+
+<div class="card">
+<h3>TR de Inexigibilidade — Diferenças Estruturais</h3>
+<p>O TR de inexigibilidade mantém a mesma base dos demais modelos, mas inclui <strong>cláusulas exclusivas</strong> que não existem nos TRs de pregão ou dispensa:</p>
+<div class="steps">
+<div class="stp"><div class="stp-l"><div class="stp-d ro">1.2</div><div class="stp-c"></div></div><div class="stp-r"><h4>Dados do Fornecedor no Corpo do TR</h4><p>Como já se sabe quem será contratado, os dados da empresa (razão social, CNPJ) constam diretamente no item 1.2 — diferente do pregão, onde isso só se define após o certame.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d ro">1.9</div><div class="stp-c"></div></div><div class="stp-r"><h4>Limites de Valores (se aplicável)</h4><p>Para inexigibilidades que também se enquadram nos limites do art. 75, I ou II, deve-se declarar o enquadramento.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d ro">1.10</div><div class="stp-c"></div></div><div class="stp-r"><h4>Dispensa do ETP</h4><p>Quando a inexigibilidade se enquadra no art. 38 do Decreto 1.525/2022, o ETP pode ser dispensado — mas a justificativa deve constar no TR.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d vi">5</div><div class="stp-c"></div></div><div class="stp-r"><h4>Fundamentação da Inexigibilidade</h4><p>Cláusula exclusiva: "Art. 74, inciso (...) da Lei 14.133/2021." + transcrição do texto legal + enquadramento do caso concreto.</p></div></div>
+<div class="stp"><div class="stp-l"><div class="stp-d vi">5.2</div></div><div class="stp-r"><h4>Razão da Escolha do Contratado</h4><p>Obrigatório (art. 72, VI Lei 14.133 e art. 148, II Dec. 1.525/2022): por que <em>este</em> fornecedor e não outro?</p></div></div>
+</div>
+<div class="hbox vi">
+<p><strong>📌 Checklist de Inexigibilidade:</strong> O checklist exige adicionalmente: proposta original em papel timbrado, demonstração de inviabilidade de competição (atestado de exclusividade, contrato de exclusividade ou declaração do fabricante), e toda a documentação de habilitação da empresa (itens 12 a 27).</p>
+</div>
+</div>
+
+<div class="card">
+<h3>TR de Adesão Carona — O Modelo Mais Enxuto</h3>
+<p>Com ~14.000 caracteres (contra ~90.000 do modelo com dedicação de MO), o TR de adesão carona é o mais curto porque <strong>não há licitação própria</strong>. A regra central é:</p>
+<div class="lbox">
+<div class="lbox-lb">📖 Regra de Ouro — Adesão Carona</div>
+<p>"Deverá ser transcrito para este item as mesmas disposições constantes na <strong>minuta contratual do Edital da Ata a ser aderida</strong>. Caso a minuta contratual traga apenas referência a outros anexos, as informações deverão ser trazidas na sua íntegra."</p>
+</div>
+<p>Isso significa que praticamente todas as cláusulas operacionais (vigência, execução, fiscalização, pagamento, garantia, subcontratação, sanções) são <strong>copiadas do edital original</strong>. Os únicos elementos próprios do órgão aderente são:</p>
+<ul>
+<li><strong>Cláusula 1:</strong> Tabela de itens conforme a ARP, com dados do fornecedor</li>
+<li><strong>Cláusula 3:</strong> Fundamentação da necessidade (do órgão aderente, não do original)</li>
+<li><strong>Cláusula 4:</strong> Referência à ARP e ao pregão de origem (nº, vigência, art. 214 Dec. 1.525/2022)</li>
+<li><strong>Designação de fiscal/gestor:</strong> Próprios do órgão aderente</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>TR de Locação de Imóvel — Modelo Especializado</h3>
+<p>O modelo de locação (inexigibilidade, art. 74, V) tem uma estrutura <strong>completamente diferente</strong> dos demais, baseada na Lei do Inquilinato (Lei 8.245/1991):</p>
+<div class="ncards">
+<div class="ncard"><div class="ncard-num sk">2</div><div><h4>Justificativa Técnica e Administrativa</h4><p>Perguntas obrigatórias: por que locar e não comprar? Existe imóvel público? Por que este imóvel? Está substituindo locação anterior? Laudo SACID compatível com a proposta?</p></div></div>
+<div class="ncard"><div class="ncard-num tl">2.1</div><div><h4>Razão da Escolha + Consulta Pública</h4><p>Portaria 343/2024/SESP: consulta pública imobiliária prévia às contratações por inexigibilidade do art. 74, V.</p></div></div>
+<div class="ncard"><div class="ncard-num em">7</div><div><h4>Deveres do Locador</h4><p>Entregar em perfeitas condições, garantir uso pacífico, pagar IPTU, manter elevadores/ar-condicionado, pagar despesas extraordinárias de condomínio.</p></div></div>
+<div class="ncard"><div class="ncard-num vi">8</div><div><h4>Deveres do Locatário</h4><p>Pagar aluguel, conservar o imóvel, não sublocar, restituir nas condições recebidas, pagar energia/água/telefone.</p></div></div>
+<div class="ncard"><div class="ncard-num am">9</div><div><h4>Benfeitorias</h4><p>Necessárias são indenizáveis (art. 35 Lei 8.245). Benfeitorias desmontáveis podem ser retiradas pelo locatário.</p></div></div>
+<div class="ncard"><div class="ncard-num ro">Regra</div><div><h4>Locador = Proprietário</h4><p>Salvo motivo justificado, o locador deve ser quem consta na matrícula. Se não for, juntar contrato de compra e venda ou documento de posse.</p></div></div>
+</div>
+</div>
+
+<div class="card">
+<h3>Preposto (exclusivo de serviços com dedicação de MO)</h3>
+<p>A Cláusula 23 do modelo com dedicação exclusiva detalha extensamente a figura do preposto — o representante do contratado que faz a interface operacional:</p>
+<ul>
+<li>Designado na assinatura do contrato (nome, CPF, qualificação)</li>
+<li><strong>Não pode ser</strong> um dos profissionais que executam o serviço</li>
+<li>Mantém Livro de Ocorrências</li>
+<li>Comunicação formal por escrito (excepcionalmente por meio eletrônico)</li>
+<li>Reunião inicial com fiscalização: plano de fiscalização, mecanismos de aferição, sanções</li>
+<li>Se necessário, instalação física (escritório) na cidade de execução</li>
+</ul>
+</div>
+
+<!-- QUIZ FINAL -->
+<div class="qcard" id="q9">
+<div class="qlb">🎯 Questão 9 de 11</div>
+<h4>Garantia Contratual</h4>
+<p class="qq">Qual o limite máximo de garantia contratual de execução que pode ser exigido no TR, conforme art. 96 da Lei 14.133/2021?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q9',this,0)"><span class="ol">A</span> 3% do valor do contrato</div>
+<div class="qopt" onclick="chk('q9',this,1)"><span class="ol">B</span> 5% do valor do contrato</div>
+<div class="qopt" onclick="chk('q9',this,0)"><span class="ol">C</span> 10% do valor do contrato</div>
+<div class="qopt" onclick="chk('q9',this,0)"><span class="ol">D</span> Não há limite legal</div>
+</div>
+<div class="qfb ok" id="q9ok">✅ <strong>Correto!</strong> Art. 96 da Lei 14.133/2021: a garantia é limitada a 5% do valor inicial do contrato. Excepcionalmente, pode chegar a 10% em contratações de grande vulto com alta complexidade (art. 99).</div>
+<div class="qfb no" id="q9no">❌ <strong>Incorreto.</strong> Resposta: B. O limite padrão é 5% do valor do contrato, podendo excepcionalmente chegar a 10% em contratações de grande vulto e alta complexidade técnica.</div>
+</div>
+
+<div class="qcard" id="q10">
+<div class="qlb">🎯 Questão 10 de 11</div>
+<h4>Adesão Carona</h4>
+<p class="qq">No TR de adesão carona, de onde devem ser extraídas as cláusulas de vigência, execução, fiscalização e sanções?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q10',this,0)"><span class="ol">A</span> De um TR novo elaborado pelo órgão aderente</div>
+<div class="qopt" onclick="chk('q10',this,1)"><span class="ol">B</span> Da minuta contratual do edital da ARP a ser aderida</div>
+<div class="qopt" onclick="chk('q10',this,0)"><span class="ol">C</span> Do último contrato vigente do órgão</div>
+<div class="qopt" onclick="chk('q10',this,0)"><span class="ol">D</span> Das orientações da SEPLAG</div>
+</div>
+<div class="qfb ok" id="q10ok">✅ <strong>Correto!</strong> O modelo SESP-MT é explícito: as cláusulas operacionais devem ser transcritas da minuta contratual do edital original da ARP, trazendo as informações na íntegra.</div>
+<div class="qfb no" id="q10no">❌ <strong>Incorreto.</strong> Resposta: B. O TR de adesão carona não cria cláusulas próprias para os aspectos operacionais — ele transcreve as disposições do edital original.</div>
+</div>
+
+<div class="qcard" id="q11">
+<div class="qlb">🎯 Questão 11 de 11</div>
+<h4>Locação de Imóvel</h4>
+<p class="qq">Na locação de imóvel por inexigibilidade (art. 74, V), qual documento normativo da SESP-MT regulamenta a consulta pública imobiliária prévia?</p>
+<div class="qopts">
+<div class="qopt" onclick="chk('q11',this,0)"><span class="ol">A</span> IN 002/2025/SESP</div>
+<div class="qopt" onclick="chk('q11',this,0)"><span class="ol">B</span> Decreto 1.525/2022, art. 148</div>
+<div class="qopt" onclick="chk('q11',this,1)"><span class="ol">C</span> Portaria 343/2024/SESP/MT</div>
+<div class="qopt" onclick="chk('q11',this,0)"><span class="ol">D</span> Súmula 177 do TCU</div>
+</div>
+<div class="qfb ok" id="q11ok">✅ <strong>Correto!</strong> A Portaria 343/2024/SESP/MT regulamenta o procedimento de consulta pública imobiliária prévia às contratações por inexigibilidade do art. 74, V da Lei 14.133/2021.</div>
+<div class="qfb no" id="q11no">❌ <strong>Incorreto.</strong> Resposta: C. A Portaria 343/2024/SESP/MT é o normativo específico para consulta pública imobiliária no âmbito da SESP.</div>
+</div>
+
+
+<div class="nav-btns">
+<button class="nbtn nbtn-back" onclick="backToHero()">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+Voltar ao Início
+</button>
+</div>
+
+<div class="footer">
+<p class="fb">Guia Prático — Termo de Referência</p>
+<p><strong>Legislação:</strong> Lei Federal 14.133/2021 (arts. 6º XXIII, 15, 16, 18, 40, 41, 67, 72, 74, 75, 96, 101, 106, 118, 135, 137, 140, 275, 276) · Decreto Estadual MT 1.525/2022 (arts. 14, 15, 22-42, 43-52, 66, 81, 131, 132, 134, 136, 137, 247, 275, 276, 289-294, 308, 312) · Dec. 216/2023 · Dec. 779/2024 · Dec. 1.376/2025 · IN 001/2025/SESP · IN 002/2025/SESP · IN 04/2024 · IN 01/2020/SEPLAG · LC Estadual MT 605/2018 · LC Federal 123/2006 · Súmula 177 TCU · Súmula 281 TCU · Súmula 331 TST · Lei 8.245/1991 (Inquilinato) · Lei 8.078/1990 (CDC) · Portaria 343/2024/SESP/MT.</p>
+<p style="margin-top:8px"><strong>Jurisprudência:</strong> TCU — Acórdãos 529/2018-Plenário · 1875/2021-Plenário · 3569/2023-2ª Câmara · 1204/2024-Plenário · 1998/2024-Plenário · 2107/2024-Plenário · 2121/2024-Plenário · 2273/2024-Plenário · 4958/2022-1ª Câmara.</p>
+<p style="margin-top:8px"><strong>Modelos:</strong> 13 modelos de TR e 11 checklists oficiais da SESP-MT (2025).</p>
+<p style="margin-top:16px;font-size:.75rem">Iohan Camões — POLITEC/MT · Versão Completa (Módulos 1–12)</p>
+</div>
+</section>
+</main>
+
+<script>
+let score=0, answered=0, total=11;
+
+function startCourse(){
+  document.getElementById('hero').style.display='none';
+  document.getElementById('mainContent').classList.add('act');
+  document.getElementById('topNav').classList.add('vis');
+  document.getElementById('sDots').classList.add('vis');
+  window.scrollTo(0,0);
+  observeModules();
+}
+
+function backToHero(){
+  document.getElementById('hero').style.display='';
+  document.getElementById('mainContent').classList.remove('act');
+  document.getElementById('topNav').classList.remove('vis');
+  document.getElementById('sDots').classList.remove('vis');
+  window.scrollTo(0,0);
+}
+
+function goMod(n){document.getElementById('m'+n).scrollIntoView({behavior:'smooth'})}
+function togAcc(btn){btn.closest('.acc-item').classList.toggle('open')}
+
+function toggleTree(id){
+  const el=document.getElementById(id);
+  el.classList.toggle('show');
+}
+
+function chk(id,el,correct){
+  const card=document.getElementById(id);
+  if(card.dataset.done) return;
+  card.dataset.done='1';
+  answered++;
+  const opts=card.querySelectorAll('.qopt');
+  opts.forEach(o=>o.style.pointerEvents='none');
+  if(correct){
+    el.classList.add('ok');
+    document.getElementById(id+'ok').classList.add('sh');
+    score++;
+  } else {
+    el.classList.add('no');
+    document.getElementById(id+'no').classList.add('sh');
+    opts.forEach(o=>{if(o.onclick&&o.onclick.toString().includes(',1)')){o.classList.add('ok')}});
+  }
+  if(answered===total) showScore();
+}
+
+function showScore(){
+  const card=document.getElementById('scoreCard');
+  card.style.display='block';
+  const pct=Math.round(score/total*100);
+  document.getElementById('scoreVal').textContent=score+'/'+total+' ('+pct+'%)';
+  const msg=pct>=80?'🎉 Excelente! Você domina a elaboração completa do Termo de Referência!':pct>=60?'👍 Bom resultado! Revise os módulos com atenção nos pontos que errou.':'📚 Recomendamos revisitar os módulos com atenção antes de elaborar seu próximo TR.';
+  document.getElementById('scoreMsg').textContent=msg;
+  card.scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function togChk(item){item.classList.toggle('done')}
+
+function observeModules(){
+  const mods=document.querySelectorAll('.mod');
+  const dots=document.querySelectorAll('.sdot');
+  const io=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('vis');
+        const idx=Array.from(mods).indexOf(e.target);
+        dots.forEach((d,i)=>d.classList.toggle('act',i===idx));
+        document.getElementById('navMl').textContent='Módulo '+(idx+1)+' de 12';
+        document.getElementById('navPb').style.width=((idx+1)/12*100)+'%';
+      }
+    });
+  },{threshold:0.15,rootMargin:'-60px 0px'});
+  mods.forEach(m=>io.observe(m));
+}
+
+
+// ── PARTICLES ──
+(function(){
+  const c=document.getElementById('particlesCanvas');
+  if(!c)return;
+  const ctx=c.getContext('2d');
+  let w,h,particles=[];
+  function resize(){w=c.width=window.innerWidth;h=c.height=window.innerHeight}
+  resize();window.addEventListener('resize',resize);
+  class P{
+    constructor(){this.reset()}
+    reset(){this.x=Math.random()*w;this.y=Math.random()*h;this.vx=(Math.random()-.5)*.3;this.vy=(Math.random()-.5)*.3;this.r=Math.random()*1.5+.5;this.a=Math.random()*.3+.05;this.pulse=Math.random()*Math.PI*2}
+    update(){this.x+=this.vx;this.y+=this.vy;this.pulse+=.02;if(this.x<0||this.x>w||this.y<0||this.y>h)this.reset()}
+    draw(){const a=this.a*(Math.sin(this.pulse)*.3+.7);ctx.beginPath();ctx.arc(this.x,this.y,this.r,0,Math.PI*2);ctx.fillStyle='rgba(56,189,248,'+a+')';ctx.fill()}
+  }
+  for(let i=0;i<60;i++)particles.push(new P());
+  function drawLines(){for(let i=0;i<particles.length;i++){for(let j=i+1;j<particles.length;j++){const dx=particles[i].x-particles[j].x,dy=particles[i].y-particles[j].y,d=Math.sqrt(dx*dx+dy*dy);if(d<120){ctx.beginPath();ctx.moveTo(particles[i].x,particles[i].y);ctx.lineTo(particles[j].x,particles[j].y);ctx.strokeStyle='rgba(56,189,248,'+((.08*(1-d/120)))+')';ctx.stroke()}}}}
+  function animate(){ctx.clearRect(0,0,w,h);particles.forEach(p=>{p.update();p.draw()});drawLines();requestAnimationFrame(animate)}
+  animate();
+})();
+
+// ── CURSOR GLOW (desktop) ──
+(function(){
+  const g=document.getElementById('cursorGlow');
+  if(!g||!matchMedia('(hover:hover)').matches)return;
+  const hero=document.getElementById('hero');
+  if(!hero)return;
+  hero.addEventListener('mousemove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';g.classList.remove('hidden')});
+  hero.addEventListener('mouseleave',()=>g.classList.add('hidden'));
+})();
+
+// ── QUIZ MOUSE TRACKING ──
+document.querySelectorAll('.qopt').forEach(el=>{
+  el.addEventListener('mousemove',e=>{
+    const r=el.getBoundingClientRect();
+    el.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+    el.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+  });
+});
+
+// ── CARD ANGLE ANIMATION ──
+(function(){
+  let angle=0;
+  function rotateAngle(){angle=(angle+1)%360;document.querySelectorAll('.card').forEach(c=>c.style.setProperty('--angle',angle+'deg'));requestAnimationFrame(rotateAngle)}
+  rotateAngle();
+})();
+
+// ── SMOOTH COUNT-UP FOR SCORE ──
+const origShowScore=showScore;
+showScore=function(){
+  origShowScore();
+  const el=document.getElementById('scoreVal');
+  if(!el)return;
+  const target=el.textContent;
+  el.textContent='...';
+  setTimeout(()=>{el.textContent=target;el.style.animation='scoreReveal .6s cubic-bezier(.4,0,.2,1)'},200);
+};
+// Add score reveal keyframes
+const sty=document.createElement('style');
+sty.textContent='@keyframes scoreReveal{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}';
+document.head.appendChild(sty);
+
+</script>
+</body>
+</html>
